@@ -1,0 +1,568 @@
+fileFormatVersion: 2
+guid: 281f4d4ccf3b73244bfbb68281444d97
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Beaker 1
+    100002: Beaker 2
+    100004: Beaker 2.001
+    100006: Beaker 2.002
+    100008: Beaker 2.003
+    100010: Beaker 2.004
+    100012: Bone
+    100014: Bone_end
+    100016: Camera
+    100018: Cardboard box 0
+    100020: Cardboard box 1
+    100022: Cardboard box 2
+    100024: Cardboard box 3
+    100026: Cardboard box 4
+    100028: Clock Frame
+    100030: Clock hour hand
+    100032: Clock minute hand
+    100034: Cube
+    100036: Cube.001
+    100038: Cube.002
+    100040: Cube.003
+    100042: Cube.004
+    100044: Cube.005
+    100046: Cube.006
+    100048: Cube.007
+    100050: Cube.008
+    100052: Cube.009
+    100054: Cube.029
+    100056: Cylinder
+    100058: Cylinder.001
+    100060: Cylinder.002
+    100062: Cylinder.003
+    100064: Cylinder.004
+    100066: Cylinder.007
+    100068: Desk Legs
+    100070: Desk Legs.001
+    100072: Door
+    100074: Door Axis
+    100076: Door Carve 000
+    100078: Door Frame
+    100080: Door Handle1
+    100082: Door Handle1.001
+    100084: Door Handle2
+    100086: Door Handle2.001
+    100088: Door.001
+    100090: Eraser
+    100092: Evil Note
+    100094: //RootNode
+    100096: Fireworks Storage
+    100098: Globe Frame
+    100100: Globe Sphere
+    100102: Holo Projector Large
+    100104: Holo Projector Small
+    100106: Instant Fireworks
+    100108: Lamp
+    100110: Lamp Mount
+    100112: Light Switch
+    100114: Light Switch.001
+    100116: LightSwitch Switch
+    100118: LightSwitch Switch.001
+    100120: Machine Carve 01
+    100122: Machine Carve 02
+    100124: Machine Instant Fireworks
+    100126: Main_Frame_Cube.000
+    100128: Main_Frame_Cube.009
+    100130: Monitor
+    100132: Monitor cable 1
+    100134: Monitor cable 1.001
+    100136: Monitor cable 1.002
+    100138: Monitor cable 1.003
+    100140: Outlet 01
+    100142: Outlet 02
+    100144: Outlet 02.001
+    100146: Pencil
+    100148: Plane
+    100150: Plane.001
+    100152: Plane.002
+    100154: Plane.003
+    100156: Room
+    100158: RoomBase Carve
+    100160: Roombase door carve
+    100162: RoomBase Rim
+    100164: Sphere
+    100166: Start
+    100168: Table
+    100170: Table 1
+    100172: Table of elements
+    100174: Table of elements.001
+    100176: Table Top No Bevel
+    100178: Wall Frame 01
+    100180: Wall Frame 02
+    400000: Beaker 1
+    400002: Beaker 2
+    400004: Beaker 2.001
+    400006: Beaker 2.002
+    400008: Beaker 2.003
+    400010: Beaker 2.004
+    400012: Bone
+    400014: Bone_end
+    400016: Camera
+    400018: Cardboard box 0
+    400020: Cardboard box 1
+    400022: Cardboard box 2
+    400024: Cardboard box 3
+    400026: Cardboard box 4
+    400028: Clock Frame
+    400030: Clock hour hand
+    400032: Clock minute hand
+    400034: Cube
+    400036: Cube.001
+    400038: Cube.002
+    400040: Cube.003
+    400042: Cube.004
+    400044: Cube.005
+    400046: Cube.006
+    400048: Cube.007
+    400050: Cube.008
+    400052: Cube.009
+    400054: Cube.029
+    400056: Cylinder
+    400058: Cylinder.001
+    400060: Cylinder.002
+    400062: Cylinder.003
+    400064: Cylinder.004
+    400066: Cylinder.007
+    400068: Desk Legs
+    400070: Desk Legs.001
+    400072: Door
+    400074: Door Axis
+    400076: Door Carve 000
+    400078: Door Frame
+    400080: Door Handle1
+    400082: Door Handle1.001
+    400084: Door Handle2
+    400086: Door Handle2.001
+    400088: Door.001
+    400090: Eraser
+    400092: Evil Note
+    400094: //RootNode
+    400096: Fireworks Storage
+    400098: Globe Frame
+    400100: Globe Sphere
+    400102: Holo Projector Large
+    400104: Holo Projector Small
+    400106: Instant Fireworks
+    400108: Lamp
+    400110: Lamp Mount
+    400112: Light Switch
+    400114: Light Switch.001
+    400116: LightSwitch Switch
+    400118: LightSwitch Switch.001
+    400120: Machine Carve 01
+    400122: Machine Carve 02
+    400124: Machine Instant Fireworks
+    400126: Main_Frame_Cube.000
+    400128: Main_Frame_Cube.009
+    400130: Monitor
+    400132: Monitor cable 1
+    400134: Monitor cable 1.001
+    400136: Monitor cable 1.002
+    400138: Monitor cable 1.003
+    400140: Outlet 01
+    400142: Outlet 02
+    400144: Outlet 02.001
+    400146: Pencil
+    400148: Plane
+    400150: Plane.001
+    400152: Plane.002
+    400154: Plane.003
+    400156: Room
+    400158: RoomBase Carve
+    400160: Roombase door carve
+    400162: RoomBase Rim
+    400164: Sphere
+    400166: Start
+    400168: Table
+    400170: Table 1
+    400172: Table of elements
+    400174: Table of elements.001
+    400176: Table Top No Bevel
+    400178: Wall Frame 01
+    400180: Wall Frame 02
+    2000000: Camera
+    2100000: No Name
+    2100002: Metal Salts Color Label
+    2100004: Black powder rice hull label
+    2100006: Black powder label
+    2100008: Table of elements
+    2100010: Lab Desk
+    2100012: Firework Tape
+    2100014: Darker Metal
+    2100016: Cable 01
+    2100018: Red Text
+    2100020: Dark Metal
+    2100022: Robot Legs
+    2100024: Monitor Frame
+    2100026: Monitor Texture
+    2100028: Beaker
+    2100030: Beaker 2
+    2100032: Clock frame
+    2100034: Dark
+    2100036: Gold
+    2100038: Isaac Newton Picture
+    2100040: Bright Lamp
+    2100042: Couch white blue
+    2100044: Couch wood legs
+    2100046: Couch blue
+    2100048: Material.004
+    2100050: Light Switch
+    2100052: Outlet
+    2100054: Dog Picture
+    2100056: Room Walls
+    2100058: Room Floor
+    2100060: Card board
+    2100062: Material.002
+    2100064: Evil Note
+    2100066: Door Window
+    2100068: Eraser Material
+    2100070: Pencil
+    2300000: Beaker 1
+    2300002: Beaker 2
+    2300004: Beaker 2.001
+    2300006: Beaker 2.002
+    2300008: Beaker 2.003
+    2300010: Beaker 2.004
+    2300012: Cardboard box 0
+    2300014: Cardboard box 1
+    2300016: Cardboard box 2
+    2300018: Cardboard box 3
+    2300020: Cardboard box 4
+    2300022: Clock Frame
+    2300024: Clock hour hand
+    2300026: Clock minute hand
+    2300028: Cube
+    2300030: Cube.001
+    2300032: Cube.002
+    2300034: Cube.003
+    2300036: Cube.004
+    2300038: Cube.005
+    2300040: Cube.006
+    2300042: Cube.007
+    2300044: Cube.008
+    2300046: Cube.009
+    2300048: Cube.029
+    2300050: Cylinder
+    2300052: Cylinder.001
+    2300054: Cylinder.002
+    2300056: Cylinder.003
+    2300058: Cylinder.004
+    2300060: Cylinder.007
+    2300062: Desk Legs
+    2300064: Desk Legs.001
+    2300066: Door
+    2300068: Door Carve 000
+    2300070: Door Frame
+    2300072: Door Handle1
+    2300074: Door Handle1.001
+    2300076: Door Handle2
+    2300078: Door Handle2.001
+    2300080: Door.001
+    2300082: Eraser
+    2300084: Evil Note
+    2300086: Fireworks Storage
+    2300088: Globe Frame
+    2300090: Globe Sphere
+    2300092: Holo Projector Large
+    2300094: Holo Projector Small
+    2300096: Instant Fireworks
+    2300098: Lamp
+    2300100: Lamp Mount
+    2300102: Light Switch
+    2300104: Light Switch.001
+    2300106: LightSwitch Switch
+    2300108: LightSwitch Switch.001
+    2300110: Machine Carve 01
+    2300112: Machine Carve 02
+    2300114: Machine Instant Fireworks
+    2300116: Main_Frame_Cube.000
+    2300118: Main_Frame_Cube.009
+    2300120: Monitor
+    2300122: Monitor cable 1
+    2300124: Monitor cable 1.001
+    2300126: Monitor cable 1.002
+    2300128: Monitor cable 1.003
+    2300130: Outlet 01
+    2300132: Outlet 02
+    2300134: Outlet 02.001
+    2300136: Pencil
+    2300138: Plane
+    2300140: Plane.001
+    2300142: Plane.002
+    2300144: Plane.003
+    2300146: Room
+    2300148: RoomBase Carve
+    2300150: Roombase door carve
+    2300152: RoomBase Rim
+    2300154: Sphere
+    2300156: Start
+    2300158: Table
+    2300160: Table 1
+    2300162: Table of elements
+    2300164: Table of elements.001
+    2300166: Table Top No Bevel
+    2300168: Wall Frame 01
+    2300170: Wall Frame 02
+    3300000: Beaker 1
+    3300002: Beaker 2
+    3300004: Beaker 2.001
+    3300006: Beaker 2.002
+    3300008: Beaker 2.003
+    3300010: Beaker 2.004
+    3300012: Cardboard box 0
+    3300014: Cardboard box 1
+    3300016: Cardboard box 2
+    3300018: Cardboard box 3
+    3300020: Cardboard box 4
+    3300022: Clock Frame
+    3300024: Clock hour hand
+    3300026: Clock minute hand
+    3300028: Cube
+    3300030: Cube.001
+    3300032: Cube.002
+    3300034: Cube.003
+    3300036: Cube.004
+    3300038: Cube.005
+    3300040: Cube.006
+    3300042: Cube.007
+    3300044: Cube.008
+    3300046: Cube.009
+    3300048: Cube.029
+    3300050: Cylinder
+    3300052: Cylinder.001
+    3300054: Cylinder.002
+    3300056: Cylinder.003
+    3300058: Cylinder.004
+    3300060: Cylinder.007
+    3300062: Desk Legs
+    3300064: Desk Legs.001
+    3300066: Door
+    3300068: Door Carve 000
+    3300070: Door Frame
+    3300072: Door Handle1
+    3300074: Door Handle1.001
+    3300076: Door Handle2
+    3300078: Door Handle2.001
+    3300080: Door.001
+    3300082: Eraser
+    3300084: Evil Note
+    3300086: Fireworks Storage
+    3300088: Globe Frame
+    3300090: Globe Sphere
+    3300092: Holo Projector Large
+    3300094: Holo Projector Small
+    3300096: Instant Fireworks
+    3300098: Lamp
+    3300100: Lamp Mount
+    3300102: Light Switch
+    3300104: Light Switch.001
+    3300106: LightSwitch Switch
+    3300108: LightSwitch Switch.001
+    3300110: Machine Carve 01
+    3300112: Machine Carve 02
+    3300114: Machine Instant Fireworks
+    3300116: Main_Frame_Cube.000
+    3300118: Main_Frame_Cube.009
+    3300120: Monitor
+    3300122: Monitor cable 1
+    3300124: Monitor cable 1.001
+    3300126: Monitor cable 1.002
+    3300128: Monitor cable 1.003
+    3300130: Outlet 01
+    3300132: Outlet 02
+    3300134: Outlet 02.001
+    3300136: Pencil
+    3300138: Plane
+    3300140: Plane.001
+    3300142: Plane.002
+    3300144: Plane.003
+    3300146: Room
+    3300148: RoomBase Carve
+    3300150: Roombase door carve
+    3300152: RoomBase Rim
+    3300154: Sphere
+    3300156: Start
+    3300158: Table
+    3300160: Table 1
+    3300162: Table of elements
+    3300164: Table of elements.001
+    3300166: Table Top No Bevel
+    3300168: Wall Frame 01
+    3300170: Wall Frame 02
+    4300000: Door Carve 000
+    4300002: Plane.003
+    4300004: Plane.002
+    4300006: Plane
+    4300008: Table of elements.001
+    4300010: Table
+    4300012: Desk Legs.001
+    4300014: Cylinder.007
+    4300016: Holo Projector Small
+    4300018: Monitor cable 1.003
+    4300020: Holo Projector Large
+    4300022: Start
+    4300024: Cylinder.004
+    4300026: Monitor cable 1.002
+    4300028: Cube.009
+    4300030: Cube.001
+    4300032: Cylinder.003
+    4300034: Machine Carve 02
+    4300036: Instant Fireworks
+    4300038: Machine Carve 01
+    4300040: Cube.008
+    4300042: Cube.007
+    4300044: Cube.006
+    4300046: Cube.005
+    4300048: Cube.004
+    4300050: Cube.003
+    4300052: Cube.002
+    4300054: Cylinder.001
+    4300056: Monitor cable 1.001
+    4300058: Monitor cable 1
+    4300060: Monitor
+    4300062: Beaker 2.004
+    4300064: Beaker 2.003
+    4300066: Beaker 2.002
+    4300068: Beaker 2.001
+    4300070: Beaker 2
+    4300072: Cylinder.002
+    4300074: Beaker 1
+    4300076: Clock Frame
+    4300078: Clock minute hand
+    4300080: Clock hour hand
+    4300082: Wall Frame 02
+    4300084: Cube.029
+    4300086: Machine Instant Fireworks
+    4300088: Sphere
+    4300090: Main_Frame_Cube.000
+    4300092: Main_Frame_Cube.009
+    4300094: Globe Frame
+    4300096: Globe Sphere
+    4300098: Table of elements
+    4300100: Light Switch.001
+    4300102: LightSwitch Switch.001
+    4300104: Light Switch
+    4300106: LightSwitch Switch
+    4300108: Outlet 02.001
+    4300110: Wall Frame 01
+    4300112: Roombase door carve
+    4300114: RoomBase Carve
+    4300116: RoomBase Rim
+    4300118: Outlet 02
+    4300120: Outlet 01
+    4300122: Cube
+    4300124: Fireworks Storage
+    4300126: Cardboard box 2
+    4300128: Cardboard box 4
+    4300130: Cardboard box 3
+    4300132: Cardboard box 0
+    4300134: Cardboard box 1
+    4300136: Lamp Mount
+    4300138: Cylinder
+    4300140: Lamp
+    4300142: Room
+    4300144: Table Top No Bevel
+    4300146: Table 1
+    4300148: Desk Legs
+    4300150: Plane.001
+    4300152: Evil Note
+    4300154: Door.001
+    4300156: Door Handle2.001
+    4300158: Door Handle1.001
+    4300160: Door
+    4300162: Door Handle1
+    4300164: Door Handle2
+    4300166: Door Frame
+    4300168: Eraser
+    4300170: Pencil
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
