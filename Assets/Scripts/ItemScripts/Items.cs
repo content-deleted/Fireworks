@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
     public class Items : MonoBehaviour {
-    List<GameObject> items = new List<GameObject>
-    { prefab1, prefab2, prefab3, prefab4, prefab5};
+        public List<GameObject> items = new List<GameObject>();
+        public List<Transform> spawnPoints = new List<Transform>();
+        void Start() => Spawn();
+        
+        void Spawn() {
 
-    void Start() {
-        Spawn();
-    }
+            int spawnPointIndex = Random.Range(0, spawnPoints.Count);
 
-    void Spawn() {
+            int objectIndex = Random.Range(0, items.Count);
 
-        int spawnPointIndex = Random.Range(0, spawnPoints.Length);
-
-        int objectIndex = Random.Range(0, items.Length);
-
-        Instantiate(items[objectIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
-    }
+            Instantiate(items[objectIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        }
 }
