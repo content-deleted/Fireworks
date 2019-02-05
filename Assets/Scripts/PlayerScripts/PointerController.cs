@@ -5,6 +5,8 @@ using UnityEngine;
 public class PointerController : MonoBehaviour
 {
     const int layerNum = 1 << 9; 
+
+    public GameObject grabPoint;
     void Update()
     {
         if( PlayerState.singleton.pointerMode && OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) ){ 
