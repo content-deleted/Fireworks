@@ -23,6 +23,7 @@ public class PointerController : MonoBehaviour
 
                 if (r!=null) {
                     heldObject = r;
+                    heldObject.useGravity = false;
                     DrawLine(transform.position, hit.point, Color.yellow, 0.3f);
 
                     grabPoint.transform.position = hit.point;
@@ -33,12 +34,15 @@ public class PointerController : MonoBehaviour
         else{
             if(OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger) && heldObject != null){
                 GameObject.Destroy(line);
+                heldObject.useGravity = true;
                 heldObject = null;
                 grabPoint.transform.parent = null;
             }
         }
         if(heldObject != null) {
-            heldObject.velocity += (grabPoint.transform.position - heldObject.transform.position)/2;
+            Vector3 toObject = grabPoint.transform.position - heldObject.transform.position;
+            heldObject.velocity *= 0.85f;
+            heldObject.velocity += toObject;
             lr.SetPosition(1, grabPoint.transform.position);
         }
     }
