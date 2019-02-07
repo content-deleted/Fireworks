@@ -7,12 +7,14 @@ public class PointerController : MonoBehaviour
     const int layerNum = 1 << 9; 
 
     public GameObject grabPoint;
+    public GameObject lightCursor;
+    public GameObject pointEnd;
     private Rigidbody heldObject;
     private GameObject line;
     private LineRenderer lr;
     void Update()
     {
-        if(  PlayerState.singleton.pointerMode && OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ){ 
+        if(  PlayerState.singleton.pointerMode ){ 
             //DrawLine(transform.position, transform.position + transform.forward*20, Color.yellow, 0.3f);
             RaycastHit hit;
 
@@ -20,30 +22,49 @@ public class PointerController : MonoBehaviour
             {
                 //Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
                 var r = hit.rigidbody;
+                // if the player is holding down
+                if( OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ) {
+                    if (r!=null) {
+                        heldObject = r;
+                        heldObject.useGravity = false;
+                        DrawLine(pointEnd.transform.position, hit.point, Color.yellow, 0.3f);
 
-                if (r!=null) {
-                    heldObject = r;
-                    heldObject.useGravity = false;
-                    DrawLine(transform.position, hit.point, Color.yellow, 0.3f);
-
-                    grabPoint.transform.position = hit.point;
-                    grabPoint.transform.parent = transform;
+                        grabPoint.transform.position = hit.point;
+                        grabPoint.transform.parent = transform;
+                        lightCursor.SetActive(false);
+                    }
+                }
+                // update the point light
+                else {
+                    lightCursor.transform.position = hit.point;
                 }
             }
-        }
-        else{
+            // LET GO OF OBJECT
             if(OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger) && heldObject != null){
                 GameObject.Destroy(line);
                 heldObject.useGravity = true;
                 heldObject = null;
                 grabPoint.transform.parent = null;
+                lightCursor.SetActive(true);
+            }
+            // HOLDING OBJECT update
+            else if(heldObject != null) {
+                Vector3 toObject = grabPoint.transform.position - heldObject.transform.position;
+                heldObject.velocity *= 0.85f;
+                heldObject.velocity += toObject;
+                lr.SetPosition(0, pointEnd.transform.position);
+                lr.SetPosition(1, grabPoint.transform.position);
             }
         }
-        if(heldObject != null) {
-            Vector3 toObject = grabPoint.transform.position - heldObject.transform.position;
-            heldObject.velocity *= 0.85f;
-            heldObject.velocity += toObject;
-            lr.SetPosition(1, grabPoint.transform.position);
+        else {
+            // LET GO IF WE SWITCH MODES
+            if(heldObject != null) {
+                GameObject.Destroy(line);
+                heldObject.useGravity = true;
+                heldObject = null;
+                grabPoint.transform.parent = null;
+                lightCursor.SetActive(true);
+            }
         }
     }
     void DrawLine(Vector3 start, Vector3 end, Color color, float duration = 0.2f)

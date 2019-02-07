@@ -12,10 +12,12 @@ public class PlayerState : MonoBehaviour
     public bool pointerMode = false;
     public GameObject PlayerControlModel;
     public GameObject PointerModel;
+    public PointerController playerPointer;
 
     public void Awake () {
         Player = gameObject;
         singleton = this;
+        playerPointer = GetComponent<PointerController>();
     } 
 
     public void Update () {
@@ -25,6 +27,9 @@ public class PlayerState : MonoBehaviour
             // Set the model to a different one
             PlayerControlModel.SetActive(!pointerMode);
             PointerModel.SetActive(pointerMode);
+
+            // Activate light cursor
+            playerPointer.lightCursor.SetActive(pointerMode);
         }
     }
 }
