@@ -17,19 +17,22 @@ public class PlayerState : MonoBehaviour
     public void Awake () {
         Player = gameObject;
         singleton = this;
-        playerPointer = GetComponent<PointerController>();
-    } 
+        setController();
+    }
 
     public void Update () {
         if(OVRInput.GetDown(OVRInput.Button.Back)) {
             pointerMode = !pointerMode;
-
-            // Set the model to a different one
-            PlayerControlModel.SetActive(!pointerMode);
-            PointerModel.SetActive(pointerMode);
-
-            // Activate light cursor
-            playerPointer.lightCursor.SetActive(pointerMode);
+            setController();
         }
+    }
+
+    public void setController () {
+         // Set the model to a different one
+        PlayerControlModel.SetActive(!pointerMode);
+        PointerModel.SetActive(pointerMode);
+
+        // Activate light cursor
+        playerPointer.lightCursor.SetActive(pointerMode);
     }
 }

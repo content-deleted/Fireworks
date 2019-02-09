@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        if(!PlayerState.singleton.pointerMode) Move();
         Animations();
 
         // At the end of each frame we set grounded to false so that

@@ -12,6 +12,21 @@ public class PointerController : MonoBehaviour
     private Rigidbody heldObject;
     private GameObject line;
     private LineRenderer lr;
+    public int segments = 20;
+    private LineBendController lineBend;
+    void Awake() {
+        line = new GameObject();
+        line.AddComponent<LineRenderer>();
+        lr = line.GetComponent<LineRenderer>();
+
+        line.AddComponent<LineBendController>();
+        lineBend = line.GetComponent<LineBendController>();
+        lineBend.holdPoint = grabPoint;
+
+        line.SetActive(false);
+
+        lr.positionCount = segments;
+    }
     void Update()
     {
         if(  PlayerState.singleton.pointerMode ){ 
@@ -27,7 +42,10 @@ public class PointerController : MonoBehaviour
                     if (r!=null) {
                         heldObject = r;
                         heldObject.useGravity = false;
-                        DrawLine(pointEnd.transform.position, hit.point, Color.yellow, 0.3f);
+                        DrawLine(pointEnd.transform.position, hit.point);
+
+                        // update the effect
+                        lineBend.holdPoint = heldObject.gameObject;
 
                         grabPoint.transform.position = hit.point;
                         grabPoint.transform.parent = transform;
@@ -41,45 +59,51 @@ public class PointerController : MonoBehaviour
             }
             // LET GO OF OBJECT
             if(OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger) && heldObject != null){
-                GameObject.Destroy(line);
-                heldObject.useGravity = true;
-                heldObject = null;
-                grabPoint.transform.parent = null;
-                lightCursor.SetActive(true);
+                disableLine ();
             }
             // HOLDING OBJECT update
             else if(heldObject != null) {
                 Vector3 toObject = grabPoint.transform.position - heldObject.transform.position;
                 heldObject.velocity *= 0.85f;
                 heldObject.velocity += toObject;
-                lr.SetPosition(0, pointEnd.transform.position);
-                lr.SetPosition(1, grabPoint.transform.position);
+
+                updateSegments(pointEnd.transform.position, grabPoint.transform.position);
             }
         }
         else {
             // LET GO IF WE SWITCH MODES
             if(heldObject != null) {
-                GameObject.Destroy(line);
-                heldObject.useGravity = true;
-                heldObject = null;
-                grabPoint.transform.parent = null;
-                lightCursor.SetActive(true);
+                disableLine ();
             }
         }
     }
-    void DrawLine(Vector3 start, Vector3 end, Color color, float duration = 0.2f)
+
+    public void disableLine () {
+        line.SetActive(false);
+
+        heldObject.useGravity = true;
+        heldObject = null;
+        grabPoint.transform.parent = null;
+        lightCursor.SetActive(true);
+
+        // update the effect
+        lineBend.holdPoint = grabPoint;
+    }
+    void DrawLine(Vector3 start, Vector3 end)
     {
-        GameObject myLine = new GameObject();
-        myLine.transform.position = start;
-        myLine.AddComponent<LineRenderer>();
-        lr = myLine.GetComponent<LineRenderer>();
-        //lr.material = new Material(Shader.Find("Particles/Alpha Blended Premultiply"));
-        lr.startColor = color;
-        lr.endColor = color;
+        line.SetActive(true);
+        line.transform.position = start;
+        lr.material = new Material(Shader.Find("Custom/LineBend"));
         lr.startWidth = 0.1f;
         lr.endWidth =  0.1f;
-        lr.SetPosition(0, start);
-        lr.SetPosition(1, end);
-        line = myLine;
+
+        updateSegments(start, end);
+    }
+
+    void updateSegments (Vector3 start, Vector3 end) {
+        lr.positionCount = segments;
+        for(int i = 0; i < segments; i++) {
+            lr.SetPosition(i, Vector3.Lerp(start, end, (float)i / (float) segments));
+        }
     }
 }
