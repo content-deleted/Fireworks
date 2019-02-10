@@ -12,8 +12,10 @@ public class PointerController : MonoBehaviour
     private Rigidbody heldObject;
     private GameObject line;
     private LineRenderer lr;
-    public int segments = 20;
     private LineBendController lineBend;
+    public int segments = 20;
+
+    public Material lineMat;
     void Awake() {
         line = new GameObject();
         line.AddComponent<LineRenderer>();
@@ -23,29 +25,31 @@ public class PointerController : MonoBehaviour
         lineBend = line.GetComponent<LineBendController>();
         lineBend.holdPoint = grabPoint;
 
+        lr.material = lineMat;//new Material(Shader.Find("Custom/LineBend"));
+        lr.startWidth = 0.05f;
+        lr.endWidth =  0.1f;
+
         line.SetActive(false);
 
         lr.positionCount = segments;
     }
     void Update()
     {
-        if(  PlayerState.singleton.pointerMode ){ 
-            //DrawLine(transform.position, transform.position + transform.forward*20, Color.yellow, 0.3f);
+        if(PlayerState.singleton.pointerMode) { 
             RaycastHit hit;
 
             if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity))//, layerNum))
             {
-                //Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
                 var r = hit.rigidbody;
                 // if the player is holding down
                 if( OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ) {
                     if (r!=null) {
                         heldObject = r;
                         heldObject.useGravity = false;
-                        DrawLine(pointEnd.transform.position, hit.point);
+                        line.SetActive(true);
+                        line.transform.position = pointEnd.transform.position;
 
-                        // update the effect
-                        lineBend.holdPoint = heldObject.gameObject;
+                        updateSegments(pointEnd.transform.position, heldObject.transform.position);
 
                         grabPoint.transform.position = hit.point;
                         grabPoint.transform.parent = transform;
@@ -67,7 +71,7 @@ public class PointerController : MonoBehaviour
                 heldObject.velocity *= 0.85f;
                 heldObject.velocity += toObject;
 
-                updateSegments(pointEnd.transform.position, grabPoint.transform.position);
+                updateSegments(pointEnd.transform.position, heldObject.transform.position);
             }
         }
         else {
@@ -85,19 +89,6 @@ public class PointerController : MonoBehaviour
         heldObject = null;
         grabPoint.transform.parent = null;
         lightCursor.SetActive(true);
-
-        // update the effect
-        lineBend.holdPoint = grabPoint;
-    }
-    void DrawLine(Vector3 start, Vector3 end)
-    {
-        line.SetActive(true);
-        line.transform.position = start;
-        lr.material = new Material(Shader.Find("Custom/LineBend"));
-        lr.startWidth = 0.1f;
-        lr.endWidth =  0.1f;
-
-        updateSegments(start, end);
     }
 
     void updateSegments (Vector3 start, Vector3 end) {

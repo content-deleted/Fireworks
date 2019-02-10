@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class LineBendController : MonoBehaviour
 {
     public GameObject holdPoint;
