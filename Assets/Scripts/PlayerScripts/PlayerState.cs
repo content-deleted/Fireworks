@@ -20,6 +20,11 @@ public class PlayerState : MonoBehaviour
         setController();
     }
 
+    // Move out
+    public void Start () {
+        OVRManager.display.displayFrequency = 72.0f;
+    }
+
     public void Update () {
         if(OVRInput.GetDown(OVRInput.Button.Back)) {
             pointerMode = !pointerMode;

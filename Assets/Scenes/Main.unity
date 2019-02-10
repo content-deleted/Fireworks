@@ -1474,14 +1474,14 @@ MonoBehaviour:
   minimumY: -30
   lookSpeed: 15
   angleToSnap: 2
-  hangTime: 2
-  fallSpeedCap: 20
-  fallCoefficent: 0.04
-  jumpStrength: 19
+  hangTime: 1
+  fallSpeedCap: 30
+  fallCoefficent: 0.3
+  jumpStrength: 22
   jumpControl: 0.33
-  moveSpeedCap: 6
-  runSpeed: 12
-  frictionCoefficient: 1.3
+  moveSpeedCap: 7
+  runSpeed: 10
+  frictionCoefficient: 1.1
 --- !u!114 &1791871262
 MonoBehaviour:
   m_ObjectHideFlags: 0
