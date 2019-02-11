@@ -5,10 +5,12 @@ using UnityEngine;
 public class LightCursorController : MonoBehaviour
 {
     float time;
+    public float Scale;
+    public float Speed = 0.1f;
     void Update()
     {
-        time += 0.1f;
+        time += Speed;
         var scale = Mathf.Cos(time);
-        transform.localScale = 2 * scale * Vector3.one;
+        transform.localScale = Scale * scale * Vector3.one;
     }
 }
