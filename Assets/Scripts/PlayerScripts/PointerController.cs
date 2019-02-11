@@ -9,10 +9,12 @@ public class PointerController : MonoBehaviour
     public GameObject grabPoint;
     public GameObject lightCursor;
     public GameObject pointEnd;
+    public GameObject handModel;
     private Rigidbody heldObject;
     private GameObject line;
     private LineRenderer lr;
     private LineBendController lineBend;
+    private Animator animator;
     public int segments = 20;
 
     public Material lineMat;
@@ -32,6 +34,9 @@ public class PointerController : MonoBehaviour
         line.SetActive(false);
 
         lr.positionCount = segments;
+
+        // Store a reference to the hand's animator
+        animator = handModel.GetComponent<Animator>();
     }
     void Update()
     {
@@ -54,6 +59,9 @@ public class PointerController : MonoBehaviour
                         grabPoint.transform.position = hit.point;
                         grabPoint.transform.parent = transform;
                         lightCursor.SetActive(false);
+
+                        animator.SetBool("Pointing", true);
+                        animator.SetTrigger("StartPoint");
                     }
                 }
                 // update the point light
@@ -89,6 +97,8 @@ public class PointerController : MonoBehaviour
         heldObject = null;
         grabPoint.transform.parent = null;
         lightCursor.SetActive(true);
+
+        animator.SetBool("Pointing", false);
     }
 
     void updateSegments (Vector3 start, Vector3 end) {
