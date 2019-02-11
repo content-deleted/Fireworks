@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpStrength = 20f;
     public float jumpControl = 1;
 
+    public float slopeSize = 0;
+
     #endregion
 
     #region Move Param
@@ -70,14 +72,14 @@ public class PlayerMovement : MonoBehaviour
         // Note: This can be accomplished by checking collision.other
 
         // Check if grounded and handle some other behavior that happens we we ground
-        if(!jumpHeld && Vector3.Dot(collision.contacts[0].normal, Vector3.up ) > 0 ) {
+        if(!jumpHeld && Vector3.Dot(collision.contacts[0].normal, Vector3.up ) > slopeSize ) {
             grounded = true;
         }
     }
 
     void OnCollisionStay(Collision collision)
     {
-        if( Vector3.Dot(collision.contacts[0].normal, Vector3.up ) > 0 ) {
+        if( Vector3.Dot(collision.contacts[0].normal, Vector3.up ) > slopeSize ) {
             jumpHeld = false;
             grounded = true;
         } 
