@@ -5,13 +5,18 @@ using UnityEngine.UI;
 
 public class ShowUI : MonoBehaviour
 {
-    [SerializeField] private Sprite customSprite;
+    [SerializeField] private GameObject customSprite;
+    private GameObject objClone;
     void OnTriggerEnter(Collider other)
     {
-        Instantiate (customSprite, other.transform.position, other.transform.rotation);
+        if (other.CompareTag("Player"))
+        {
+            objClone = Instantiate(customSprite, other.transform.position + Vector3.up * 2, Quaternion.identity);
+        }
     }
     void OnTriggerExit(Collider other)
     {
+        Destroy(objClone);
         Destroy(gameObject);
     }
 }
