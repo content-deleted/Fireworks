@@ -6,11 +6,12 @@ public class LightCursorController : MonoBehaviour
 {
     float time;
     public float Scale;
+    public float WaveLength;
     public float Speed = 0.1f;
     void Update()
     {
         time += Speed;
         var scale = Mathf.Cos(time);
-        transform.localScale = Scale * scale * Vector3.one;
+        transform.localScale = (WaveLength * scale + Scale) * Vector3.one;
     }
 }

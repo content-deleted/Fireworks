@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+// For testing
 //[ExecuteInEditMode]
 public class LineBendController : MonoBehaviour
 {

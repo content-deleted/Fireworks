@@ -44,10 +44,13 @@ Shader "Custom/LineBend"
                 v2f o;
                 float4 worldPos = mul (unity_ObjectToWorld, v.vertex.xyz);
                 o.vertex = worldPos;
+                // store total length of line to normalize effect
+                float lineLength = distance(_Start, _End);
                 // Controls the amount the line bends overall
-                o.vertex.xyz += (distance(worldPos.xyz, _Start) * distance(worldPos.xyz, _End)) * _BendDir / 20;
+                o.vertex.xyz += (distance(worldPos.xyz, _Start) * distance(worldPos.xyz, _End)) * _BendDir / (lineLength * lineLength);
                 // Controls the offset twards the end where the point is located
-                o.vertex.xyz += (distance(worldPos.xyz, _Start) * distance(worldPos.xyz, _End)) * normalize( (_BendLocation + _BendDir) - worldPos.xyz) / 15;
+                o.vertex.xyz += (distance(worldPos.xyz, _Start) * distance(worldPos.xyz, _End)) * normalize( (_BendLocation + _BendDir) - worldPos.xyz) / (2*lineLength);
+                // Convert from world space to clip
                 o.vertex = UnityWorldToClipPos(o.vertex);
                 o.uv = v.uv;
                 return o;

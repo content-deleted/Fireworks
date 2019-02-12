@@ -32,6 +32,7 @@ public class PointerController : MonoBehaviour
         lr.endWidth =  0.1f;
 
         line.SetActive(false);
+        pointEnd.SetActive(false);
 
         lr.positionCount = segments;
 
@@ -51,14 +52,15 @@ public class PointerController : MonoBehaviour
                     if (r!=null) {
                         heldObject = r;
                         heldObject.useGravity = false;
-                        line.SetActive(true);
+                        
                         line.transform.position = pointEnd.transform.position;
-
                         updateSegments(pointEnd.transform.position, heldObject.transform.position);
+                        line.SetActive(true);
 
                         grabPoint.transform.position = hit.point;
                         grabPoint.transform.parent = transform;
                         lightCursor.SetActive(false);
+                        pointEnd.SetActive(true);
 
                         animator.SetBool("Pointing", true);
                         animator.SetTrigger("StartPoint");
@@ -97,6 +99,7 @@ public class PointerController : MonoBehaviour
         heldObject = null;
         grabPoint.transform.parent = null;
         lightCursor.SetActive(true);
+        pointEnd.SetActive(false);
 
         animator.SetBool("Pointing", false);
     }
