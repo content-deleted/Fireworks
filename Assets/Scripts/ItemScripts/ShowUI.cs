@@ -5,20 +5,13 @@ using UnityEngine.UI;
 
 public class ShowUI : MonoBehaviour
 {
-    [SerializeField] private Image customImage;
+    [SerializeField] private Sprite customSprite;
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            customImage.enabled = true;
-        }
+        Instantiate (customSprite, other.transform.position, other.transform.rotation);
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            customImage.enabled = false;
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }
