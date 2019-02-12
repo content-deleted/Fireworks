@@ -53,8 +53,8 @@ public class PointerController : MonoBehaviour
                     if (r!=null) {
                         heldObject = r;
                         heldObject.useGravity = false;
-                        couldRotate = heldObject.freezeRotation; // store previous rotation setting
-                        heldObject.freezeRotation = true;
+                        //couldRotate = heldObject.freezeRotation; // store previous rotation setting
+                        //heldObject.freezeRotation = true;
                         
                         line.transform.position = pointEnd.transform.position;
                         updateSegments(pointEnd.transform.position, heldObject.transform.position);
@@ -88,9 +88,9 @@ public class PointerController : MonoBehaviour
 
                 updateSegments(pointEnd.transform.position, heldObject.transform.position);
 
-                var curRotation = handModel.transform.rotation.eulerAngles.z - prevRotation;
-                heldObject.transform.Rotate(0, 0, curRotation);
-                prevRotation = handModel.transform.rotation.eulerAngles.z;
+                //Vector3 curRotation = new Vector3(0,0,handModel.transform.rotation.eulerAngles.z - prevRotation);
+                //heldObject.transform.Rotate(curRotation)
+                //prevRotation = handModel.transform.rotation.eulerAngles.z;
             }
         }
         else {
@@ -105,7 +105,7 @@ public class PointerController : MonoBehaviour
         line.SetActive(false);
 
         heldObject.useGravity = true;
-        heldObject.freezeRotation = couldRotate;
+        //heldObject.freezeRotation = couldRotate;
 
         heldObject = null;
         grabPoint.transform.parent = null;

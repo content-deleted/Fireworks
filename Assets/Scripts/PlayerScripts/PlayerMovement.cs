@@ -102,6 +102,9 @@ public class PlayerMovement : MonoBehaviour
         xAxis += primaryTouchpad.x + Input.GetAxis("Horizontal");
         zAxis += primaryTouchpad.y + Input.GetAxis("Vertical");
 
+        xAxis = 2 * Mathf.Clamp(xAxis, -0.5f, 0.5f);
+        zAxis = 2 * Mathf.Clamp(zAxis, -0.5f, 0.5f);
+
         // If the player falls off of the map then set the player on the last ledge
         if (transform.position.y < minimumY)
         {
