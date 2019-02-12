@@ -130,13 +130,14 @@ public class PlayerMovement : MonoBehaviour
             jumpHeld = !( (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) || rb.velocity.y < -hangTime) );
             // Only use the fall coefficent if we're less then the max fall speed 
             float ySpeed = rb.velocity.y  - fallCoefficent;
-            if (!jumpHeld && ySpeed > -fallSpeedCap) rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y - fallCoefficent, rb.velocity.z);
+            if (!jumpHeld && ySpeed > -fallSpeedCap) rb.velocity = new Vector3(rb.velocity.x, ySpeed, rb.velocity.z);
         }
     # endregion
 
         // Calculate force from input, angle, and speed
-        force = cam.transform.forward.normalized * zAxis * runSpeed + cam.transform.right.normalized * xAxis * runSpeed;
-        force.y = 0;
+        var r = cam.transform.right; r.y = 0;
+        var f = cam.transform.forward; f.y = 0;
+        force = f.normalized * zAxis * runSpeed + r.normalized * xAxis * runSpeed;
 
         // Apply ground friction
         rb.velocity  /= ((grounded) ? frictionCoefficient : 1);
