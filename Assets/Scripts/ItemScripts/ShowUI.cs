@@ -5,20 +5,18 @@ using UnityEngine.UI;
 
 public class ShowUI : MonoBehaviour
 {
-    [SerializeField] private Image customImage;
+    [SerializeField] private GameObject customSprite;
+    private GameObject objClone;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            customImage.enabled = true;
+            objClone = Instantiate(customSprite, other.transform.position + Vector3.up * 2, Quaternion.identity);
         }
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            customImage.enabled = false;
-            Destroy(gameObject);
-        }
+        Destroy(objClone);
+        Destroy(gameObject);
     }
 }
