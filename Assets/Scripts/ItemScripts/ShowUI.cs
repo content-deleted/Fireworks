@@ -1,22 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShowUI : MonoBehaviour
 {
-    [SerializeField] public TextMesh customText;
+    [SerializeField] private Image customImage;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            customText.gameObject.SetActive(true);
+            customImage.enabled = true;
         }
     }
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            customText.gameObject.SetActive(false);
+            customImage.enabled = false;
+            Destroy(gameObject);
         }
     }
 }
