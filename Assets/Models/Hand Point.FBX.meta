@@ -23,6 +23,12 @@ ModelImporter:
     100034: Character001
     100036: Hand
     100038: //RootNode
+    100040: Armature
+    100042: CATRigHub001Bone001Bone001Bone001Bone001_end
+    100044: CATRigHub001Bone001Bone002Bone001Bone001_end
+    100046: CATRigHub001Bone001Bone003Bone001Bone001_end
+    100048: CATRigHub001Bone001Bone004Bone001Bone001_end
+    100050: CATRigHub001Bone001Bone005Bone001Bone001_end
     400000: CATRigHub001
     400002: CATRigHub001Bone001
     400004: CATRigHub001Bone001Bone001
@@ -43,6 +49,12 @@ ModelImporter:
     400034: Character001
     400036: Hand
     400038: //RootNode
+    400040: Armature
+    400042: CATRigHub001Bone001Bone001Bone001Bone001_end
+    400044: CATRigHub001Bone001Bone002Bone001Bone001_end
+    400046: CATRigHub001Bone001Bone003Bone001Bone001_end
+    400048: CATRigHub001Bone001Bone004Bone001Bone001_end
+    400050: CATRigHub001Bone001Bone005Bone001Bone001_end
     2100000: 01 - Default
     4300000: Hand
     7400000: StartPointing
@@ -50,6 +62,7 @@ ModelImporter:
     7400004: PointingHand
     9500000: //RootNode
     13700000: Hand
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -186,7 +199,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.0254
+    previousCalculatedGlobalScale: 0.01
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
