@@ -16,8 +16,9 @@ public class PointerController : MonoBehaviour
     private LineBendController lineBend;
     private Animator animator;
     public int segments = 20;
-
     public Material lineMat;
+    private float prevRotation; 
+    private bool couldRotate;
     void Awake() {
         line = new GameObject();
         line.AddComponent<LineRenderer>();
@@ -52,6 +53,8 @@ public class PointerController : MonoBehaviour
                     if (r!=null) {
                         heldObject = r;
                         heldObject.useGravity = false;
+                        couldRotate = heldObject.freezeRotation; // store previous rotation setting
+                        heldObject.freezeRotation = true;
                         
                         line.transform.position = pointEnd.transform.position;
                         updateSegments(pointEnd.transform.position, heldObject.transform.position);
@@ -64,6 +67,8 @@ public class PointerController : MonoBehaviour
 
                         animator.SetBool("Pointing", true);
                         animator.SetTrigger("StartPoint");
+
+                        prevRotation = handModel.transform.rotation.eulerAngles.z;
                     }
                 }
                 // update the point light
@@ -82,6 +87,10 @@ public class PointerController : MonoBehaviour
                 heldObject.velocity += toObject;
 
                 updateSegments(pointEnd.transform.position, heldObject.transform.position);
+
+                var curRotation = handModel.transform.rotation.eulerAngles.z - prevRotation;
+                heldObject.transform.Rotate(0, 0, curRotation);
+                prevRotation = handModel.transform.rotation.eulerAngles.z;
             }
         }
         else {
@@ -96,6 +105,8 @@ public class PointerController : MonoBehaviour
         line.SetActive(false);
 
         heldObject.useGravity = true;
+        heldObject.freezeRotation = couldRotate;
+
         heldObject = null;
         grabPoint.transform.parent = null;
         lightCursor.SetActive(true);

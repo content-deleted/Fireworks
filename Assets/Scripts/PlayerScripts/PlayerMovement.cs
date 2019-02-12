@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private Vector3 ledgeMemory;
     private Animator animator;
-    private static readonly float axisModifier = Mathf.Sqrt(2) / 2;
 
     #region Jump Parm
     private bool grounded = true;
@@ -103,9 +102,6 @@ public class PlayerMovement : MonoBehaviour
         xAxis += primaryTouchpad.x + Input.GetAxis("Horizontal");
         zAxis += primaryTouchpad.y + Input.GetAxis("Vertical");
 
-        xAxis *= axisModifier;
-        zAxis *= axisModifier;
-
         // If the player falls off of the map then set the player on the last ledge
         if (transform.position.y < minimumY)
         {
@@ -118,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
             // Update the last on ledge position of the player
             ledgeMemory = transform.position; 
             // Handle a jump input
-            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyDown(KeyCode.Space))//(InputManager.GetButtonDown(PlayerButton.Jump, player))
+            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyDown(KeyCode.Space))
             {
                 animator.SetTrigger("Jump");
                 rb.velocity = new Vector3(rb.velocity.x, jumpStrength, rb.velocity.z);
@@ -127,9 +123,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else {
             // Check if the player is still holding jump from the button and from the hang time
-            jumpHeld = !( (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) || rb.velocity.y < -hangTime) );
+            if( (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyUp(KeyCode.Space)) || rb.velocity.y < -hangTime) 
+                jumpHeld = false;
             // Only use the fall coefficent if we're less then the max fall speed 
-            float ySpeed = rb.velocity.y  - fallCoefficent;
+            float ySpeed = rb.velocity.y - fallCoefficent;
             if (!jumpHeld && ySpeed > -fallSpeedCap) rb.velocity = new Vector3(rb.velocity.x, ySpeed, rb.velocity.z);
         }
     # endregion
@@ -137,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
         // Calculate force from input, angle, and speed
         var r = cam.transform.right; r.y = 0;
         var f = cam.transform.forward; f.y = 0;
-        force = f.normalized * zAxis * runSpeed + r.normalized * xAxis * runSpeed;
+        force = f * zAxis * runSpeed + r * xAxis * runSpeed;
 
         // Apply ground friction
         rb.velocity  /= ((grounded) ? frictionCoefficient : 1);
@@ -165,8 +162,6 @@ public class PlayerMovement : MonoBehaviour
         // If statement only if input is received and the player is on the ground
         if ((xAxis != 0 || zAxis != 0))
         {
-            rb.freezeRotation = false;
-
             // The y rotation of the player and the camera
             float playerRotation = transform.eulerAngles.y;
             
@@ -182,7 +177,6 @@ public class PlayerMovement : MonoBehaviour
             else 
                 transform.rotation = inputLook;
         }
-        rb.freezeRotation = true;
         
         // Makes sure that the x and z rotations are 0
         transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
