@@ -60,6 +60,8 @@ ModelImporter:
     7400000: StartPointing
     7400002: OpenHand
     7400004: PointingHand
+    7400006: StartPoint
+    7400008: PointingHand
     9500000: //RootNode
     13700000: Hand
     2186277476908879412: ImportLogs
@@ -92,10 +94,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: StartPointing
-      takeName: Take 001
-      firstFrame: 3
-      lastFrame: 17
+      name: StartPoint
+      takeName: Armature|Armature|Take 001|BaseLayer
+      firstFrame: 4
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -121,7 +123,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: OpenHand
-      takeName: Take 001
+      takeName: Armature|Armature|Take 001|BaseLayer
       firstFrame: 0
       lastFrame: 3
       wrapMode: 0
@@ -149,9 +151,9 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: PointingHand
-      takeName: Take 001
-      firstFrame: 17
-      lastFrame: 18
+      takeName: Armature|Armature|Take 001|BaseLayer
+      firstFrame: 18
+      lastFrame: 21
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
