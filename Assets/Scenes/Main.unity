@@ -1414,12 +1414,12 @@ PrefabInstance:
     - target: {fileID: 4946381262565364831, guid: 130c290fc813294438436ee7724b59d6,
         type: 3}
       propertyPath: runSpeed
-      value: 13
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4946381262565364831, guid: 130c290fc813294438436ee7724b59d6,
         type: 3}
       propertyPath: frictionCoefficient
-      value: 1.15
+      value: 1.025
       objectReference: {fileID: 0}
     - target: {fileID: 4946381262565364831, guid: 130c290fc813294438436ee7724b59d6,
         type: 3}
@@ -1429,12 +1429,17 @@ PrefabInstance:
     - target: {fileID: 4946381262565364831, guid: 130c290fc813294438436ee7724b59d6,
         type: 3}
       propertyPath: fallCoefficent
-      value: 0.35
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4946381262565364831, guid: 130c290fc813294438436ee7724b59d6,
         type: 3}
       propertyPath: jumpStrength
-      value: 17.5
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946381262565364831, guid: 130c290fc813294438436ee7724b59d6,
+        type: 3}
+      propertyPath: turnThresh
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 4946381262565364824, guid: 130c290fc813294438436ee7724b59d6,
         type: 3}
@@ -3516,9 +3521,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 024202006e4fbb544838d416f923f8d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistance: 5
+  minDistance: 7
   maxDistance: 12
-  forceAmount: 1.3
+  forceAmount: 1.5
   heightOffset: 4
 --- !u!135 &1636557976602326503
 SphereCollider:
@@ -3531,8 +3536,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6.255877
-  m_Center: {x: -0.0000000020665958, y: 0.87411404, z: -2.0143278}
+  m_Radius: 3.6042259
+  m_Center: {x: -0.000000009321926, y: -0.098596096, z: 3.0572643}
 --- !u!1 &1636557976602326509
 GameObject:
   m_ObjectHideFlags: 0

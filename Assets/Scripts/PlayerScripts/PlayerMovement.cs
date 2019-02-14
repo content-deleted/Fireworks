@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         // Note: This can be accomplished by checking collision.other
 
         // Check if grounded and handle some other behavior that happens we we ground
-        if(!jumpHeld && Vector3.Dot(collision.contacts[0].normal, Vector3.up ) > slopeSize ) {
+        if(Vector3.Dot(collision.contacts[0].normal, Vector3.up ) > slopeSize ) {
             grounded = true;
             jumpHeld = false;
         }
@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionStay(Collision collision)
     {
-        if( Vector3.Dot(collision.contacts[0].normal, Vector3.up ) > slopeSize ) {
+        if(!jumpHeld && Vector3.Dot(collision.contacts[0].normal, Vector3.up ) > slopeSize ) {
             grounded = true;
         } 
     }
@@ -124,6 +124,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 animator.SetTrigger("Jump");
                 rb.velocity = new Vector3(rb.velocity.x, jumpStrength, rb.velocity.z);
+                grounded = false;
                 jumpHeld = true;
             }
         }
@@ -142,9 +143,13 @@ public class PlayerMovement : MonoBehaviour
         var r = cam.transform.right; r.y = 0;
         var f = cam.transform.forward; f.y = 0;
         force = f * zAxis * runSpeed + r * xAxis * runSpeed;
-
+        
+        var frict = frictionCoefficient;
+        if(Mathf.Abs(xAxis) < 0.1f && Mathf.Abs(zAxis)< 0.1f) {
+            frict *=2;
+        }
         // Apply ground friction
-        rb.velocity  /= ((grounded) ? frictionCoefficient : 1);
+        rb.velocity  /= ((grounded) ? frict : 1);
 
         // check if we are going faster then the cap, if not we don't add our foce (other things can still push the player faster)
         if(Mathf.Sqrt(Mathf.Pow(rb.velocity.x, 2) + Mathf.Pow(rb.velocity.z, 2)) < moveSpeedCap) {
