@@ -54,6 +54,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.symbols
 
 # In-game files
 /Assets/gamelog.txt
