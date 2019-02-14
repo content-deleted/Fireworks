@@ -29,7 +29,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpControl = 1;
 
     public float slopeSize = 0;
-
+    private bool lastFrameJump;
+    private bool thisFrameJump;
     #endregion
 
     #region Move Param
@@ -49,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        thisFrameJump = OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger);
         if(!PlayerState.singleton.pointerMode && !UIDisplay.singleton.Active) Move();
         Animations();
 
@@ -57,6 +59,8 @@ public class PlayerMovement : MonoBehaviour
         // Obviously it would be better to use OnCollisionExit 
         // but we can't check the normal
         if(grounded && !Physics.Raycast(playerCollider.bounds.center, Vector3.down, playerCollider.bounds.extents.y + 0.5f)) grounded = false;
+
+        lastFrameJump = thisFrameJump;
     }
     
     private void Animations() 
@@ -120,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
             // Update the last on ledge position of the player
             ledgeMemory = transform.position; 
             // Handle a jump input
-            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyDown(KeyCode.Space) )
+            if ( (thisFrameJump && !lastFrameJump) || Input.GetKeyDown(KeyCode.Space) )
             {
                 animator.SetTrigger("Jump");
                 rb.velocity = new Vector3(rb.velocity.x, jumpStrength, rb.velocity.z);
@@ -133,8 +137,8 @@ public class PlayerMovement : MonoBehaviour
             if( rb.velocity.y < -hangTime) 
                 jumpHeld = false;
             // Only use the fall coefficent if we're less then the max fall speed */
-            float ySpeed = rb.velocity.y - fallCoefficent;
-            if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && ySpeed > -fallSpeedCap) 
+            float ySpeed = rb.velocity.y - (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) ? fallCoefficent : 0.1f);
+            if (ySpeed > -fallSpeedCap) 
             rb.velocity = new Vector3(rb.velocity.x, ySpeed, rb.velocity.z); 
         }
     # endregion
