@@ -976,7 +976,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d3bb4be8e7e1546abcd4869563a347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customSprite: {fileID: 0}
+  customSprite: {fileID: 4073704898469363960, guid: c00df719f62b9bf4686602e3b4b522b0,
+    type: 3}
 --- !u!114 &473319938
 MonoBehaviour:
   m_ObjectHideFlags: 0
