@@ -140,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
             float ySpeed = rb.velocity.y - (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) ? fallCoefficent : 0.1f);
             if (ySpeed > -fallSpeedCap) 
             rb.velocity = new Vector3(rb.velocity.x, ySpeed, rb.velocity.z); 
+            if(ySpeed < 0) jumpHeld = false;
         }
     # endregion
 
