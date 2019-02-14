@@ -16,7 +16,9 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
 
     #region Jump Parm
+    [SerializeField]
     private bool grounded = true;
+    [SerializeField]
     private bool jumpHeld = false;
 
     [Header("Jump Info")]
@@ -73,13 +75,13 @@ public class PlayerMovement : MonoBehaviour
         // Check if grounded and handle some other behavior that happens we we ground
         if(!jumpHeld && Vector3.Dot(collision.contacts[0].normal, Vector3.up ) > slopeSize ) {
             grounded = true;
+            jumpHeld = false;
         }
     }
 
     void OnCollisionStay(Collision collision)
     {
         if( Vector3.Dot(collision.contacts[0].normal, Vector3.up ) > slopeSize ) {
-            jumpHeld = false;
             grounded = true;
         } 
     }
@@ -113,11 +115,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
     # region Jump 
+        //if( OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyUp(KeyCode.Space)) {jumpHeld = false; Debug.Log("fuck");}
         if (grounded) {
             // Update the last on ledge position of the player
             ledgeMemory = transform.position; 
             // Handle a jump input
-            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyDown(KeyCode.Space))
+            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyDown(KeyCode.Space) )
             {
                 animator.SetTrigger("Jump");
                 rb.velocity = new Vector3(rb.velocity.x, jumpStrength, rb.velocity.z);
@@ -125,12 +128,13 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         else {
-            // Check if the player is still holding jump from the button and from the hang time
-            if( (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyUp(KeyCode.Space)) || rb.velocity.y < -hangTime) 
+           /* // Check if the player is still holding jump from the button and from the hang time
+            if( rb.velocity.y < -hangTime) 
                 jumpHeld = false;
-            // Only use the fall coefficent if we're less then the max fall speed 
+            // Only use the fall coefficent if we're less then the max fall speed */
             float ySpeed = rb.velocity.y - fallCoefficent;
-            if (!jumpHeld && ySpeed > -fallSpeedCap) rb.velocity = new Vector3(rb.velocity.x, ySpeed, rb.velocity.z);
+            if (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && ySpeed > -fallSpeedCap) 
+            rb.velocity = new Vector3(rb.velocity.x, ySpeed, rb.velocity.z); 
         }
     # endregion
 
