@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!PlayerState.singleton.pointerMode) Move();
+        if(!PlayerState.singleton.pointerMode && !UIDisplay.singleton.Active) Move();
         Animations();
 
         // At the end of each frame we set grounded to false so that

@@ -5,7 +5,6 @@ using UnityEngine;
 public class PointerController : MonoBehaviour
 {
     const int layerNum = 1 << 9; 
-
     public GameObject grabPoint;
     public GameObject lightCursor;
     public GameObject pointEnd;
