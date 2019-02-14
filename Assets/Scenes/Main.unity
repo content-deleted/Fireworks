@@ -153,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400038, guid: e004ae8a7f301e2489cd05c9e6bd87b5, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400038, guid: e004ae8a7f301e2489cd05c9e6bd87b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -181,7 +181,15 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: b61c2e943a347094d944d914288ab580, type: 2}
     - target: {fileID: 400040, guid: e004ae8a7f301e2489cd05c9e6bd87b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.165
+      value: -0.217
+      objectReference: {fileID: 0}
+    - target: {fileID: 400034, guid: e004ae8a7f301e2489cd05c9e6bd87b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.052
+      objectReference: {fileID: 0}
+    - target: {fileID: 400036, guid: e004ae8a7f301e2489cd05c9e6bd87b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.912
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e004ae8a7f301e2489cd05c9e6bd87b5, type: 3}
@@ -1194,7 +1202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564803021}
   m_LocalRotation: {x: 0.48725954, y: 0.5124239, z: -0.48725954, w: 0.5124239}
-  m_LocalPosition: {x: 0.59979486, y: 0.011308193, z: 0}
+  m_LocalPosition: {x: 0.59979486, y: -0.041, z: 0}
   m_LocalScale: {x: 0.034850013, y: 0.034850013, z: 0.034850005}
   m_Children: []
   m_Father: {fileID: 74219963}
@@ -1938,7 +1946,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0, y: -2.5}
-  m_SizeDelta: {x: 750, y: 500}
+  m_SizeDelta: {x: 750, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1096556512
 MonoBehaviour:
@@ -1953,7 +1961,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSpeed: 0.05
-  text: Hello and welcome to the lab!
+  messages:
+  - Welcome to the lab! Billy needs some help making fireworks before the big event
+    tonight.
+  - You can help Billy by guiding them to the elements stored around the lab.
+  - You can pick things up to help Billy but only they can pick up the elements. Here's
+    how you can control Billy
 --- !u!114 &1096556514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2347,9 +2360,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2468bc7a9973c844cba9c9eb8835a992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motion: {x: 0, y: 0.0007, z: 0}
+  motion: {x: 0, y: 0.05, z: 0}
   speed: 0.03
-  localMovement: 0
+  localMovement: 1
 --- !u!114 &1574845715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3144,8 +3157,6 @@ MonoBehaviour:
   - {fileID: 597319375}
   - {fileID: 86481627}
   PressAnyButton: {fileID: 1574845711}
-  Locked: 0
-  Active: 0
   currentElement: 0
   StartFromBeginning: 1
 --- !u!4 &367447628934984309

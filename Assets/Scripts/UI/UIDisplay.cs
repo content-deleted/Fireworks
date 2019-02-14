@@ -14,8 +14,19 @@ public class UIDisplay : MonoBehaviour
 
     public GameObject PressAnyButton;
 
-    public bool Locked = false;
-    public bool Active = false;
+    private bool locked = false;
+    public bool Locked {
+        get => locked;
+        set {
+            locked = value;
+            PressAnyButton.SetActive(!locked);
+        }
+    }
+    private bool active = false;
+    public bool Active {
+        get => active;
+        set => active = value;
+    }
     public int currentElement;
     public bool StartFromBeginning = true;
     public void Start () {
@@ -35,12 +46,17 @@ public class UIDisplay : MonoBehaviour
 
         if(currentElement == elements.Count) {
             PressAnyButton.SetActive(false);
-            Active = false;
             currentElement++;
+            StartCoroutine( delayedActivation ());
             return;
         }
 
         elements[currentElement].SetActive(true);
         currentElement++;
+    }
+
+    IEnumerator delayedActivation () {
+        yield return new WaitForSeconds(0.5f);
+        Active = false;
     }
 }
