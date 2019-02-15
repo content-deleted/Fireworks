@@ -865,9 +865,9 @@ GameObject:
   - component: {fileID: 473319935}
   - component: {fileID: 473319934}
   - component: {fileID: 473319933}
-  - component: {fileID: 473319932}
   - component: {fileID: 473319937}
   - component: {fileID: 473319938}
+  - component: {fileID: 473319932}
   m_Layer: 9
   m_Name: PickupTest
   m_TagString: Untagged
@@ -875,20 +875,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &473319932
-CapsuleCollider:
+--- !u!135 &473319932
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473319931}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.016238667
-  m_Height: 0.05333795
-  m_Direction: 2
-  m_Center: {x: 0.000384401, y: 0.000000057451373, z: 0.008169074}
+  serializedVersion: 2
+  m_Radius: 0.022
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &473319933
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -957,13 +956,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473319931}
-  m_LocalRotation: {x: -0.6700164, y: -0.22600465, z: -0.67001635, w: 0.2260047}
-  m_LocalPosition: {x: 4.0093064, y: 1.2564635, z: 1.7300001}
-  m_LocalScale: {x: 35.658028, y: 35.658028, z: 35.658028}
+  m_LocalRotation: {x: -0.30075324, y: -0, z: -0, w: 0.95370203}
+  m_LocalPosition: {x: 1.6, y: 6.454631, z: 47.471066}
+  m_LocalScale: {x: 35.65806, y: 35.658092, z: 35.658066}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: -142.72, y: -90, z: -0.000015258789}
+  m_LocalEulerAnglesHint: {x: -35.006, y: 0, z: 0}
 --- !u!114 &473319937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -976,8 +975,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d3bb4be8e7e1546abcd4869563a347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customSprite: {fileID: 4073704898469363960, guid: c00df719f62b9bf4686602e3b4b522b0,
+  customSprite: {fileID: 428597161826490787, guid: da7ae67de5b290249acf2b535ed846d7,
     type: 3}
+  FRAMESTOWAIT: 30
 --- !u!114 &473319938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -990,7 +990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c063594b1cdb1524aa1198ba73121014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 0.5
   Axis: {x: 0, y: 1, z: 0}
 --- !u!1 &530706863
 GameObject:

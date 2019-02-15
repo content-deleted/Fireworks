@@ -37,8 +37,7 @@ public class PushText : MonoBehaviour
                     yield return new WaitForSeconds(textSpeed);
                     if(skip) {
                         skip = false;
-                        textObject.text = "";
-                        continue;
+                        break;
                     }
                 }
                 textObject.text = "";
