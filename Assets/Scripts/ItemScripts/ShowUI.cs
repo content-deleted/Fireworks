@@ -42,6 +42,6 @@ public class ShowUI : MonoBehaviour
     }
 
     void Update () {
-        if(OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger) || Input.GetKeyDown(KeyCode.Space) ) skip = true;
+        if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyDown(KeyCode.Space) ) skip = true;
     }
 }

@@ -1452,6 +1452,11 @@ PrefabInstance:
       propertyPath: turnThresh
       value: 0.33
       objectReference: {fileID: 0}
+    - target: {fileID: 4946381262565364831, guid: 130c290fc813294438436ee7724b59d6,
+        type: 3}
+      propertyPath: jumpControl
+      value: 0.42
+      objectReference: {fileID: 0}
     - target: {fileID: 4946381262565364824, guid: 130c290fc813294438436ee7724b59d6,
         type: 3}
       propertyPath: PlayerControlModel
