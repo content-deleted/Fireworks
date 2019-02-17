@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         playerCollider = GetComponent<Collider>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         thisFrameJump = OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger);
         if(!PlayerState.singleton.pointerMode && !UIDisplay.singleton.Active) Move();
@@ -149,12 +149,13 @@ public class PlayerMovement : MonoBehaviour
         var f = cam.transform.forward; f.y = 0;
         force = f * zAxis * runSpeed + r * xAxis * runSpeed;
         
+        /*
         var frict = frictionCoefficient;
         if(Mathf.Abs(xAxis) < 0.1f && Mathf.Abs(zAxis)< 0.1f) {
             frict *=2;
-        }
+        } */
         // Apply ground friction
-        rb.velocity  /= ((grounded) ? frict : 1);
+        rb.velocity  /= ((grounded) ? frictionCoefficient : 1);
 
         // check if we are going faster then the cap, if not we don't add our foce (other things can still push the player faster)
         if(Mathf.Sqrt(Mathf.Pow(rb.velocity.x, 2) + Mathf.Pow(rb.velocity.z, 2)) < moveSpeedCap) {
