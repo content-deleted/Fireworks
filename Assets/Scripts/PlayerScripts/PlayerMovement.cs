@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     #region Jump Parm
     [SerializeField]
     private bool grounded = true;
-    [SerializeField]
     private bool jumpHeld = false;
 
     [Header("Jump Info")]
@@ -137,7 +136,7 @@ public class PlayerMovement : MonoBehaviour
             if( rb.velocity.y < -hangTime) 
                 jumpHeld = false;
             // Only use the fall coefficent if we're less then the max fall speed */
-            float ySpeed = rb.velocity.y - (!OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) ? fallCoefficent : 0.1f);
+            float ySpeed = rb.velocity.y - (!(OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger)||Input.GetKey(KeyCode.Space) ) ? fallCoefficent : 0.1f);
             if (ySpeed > -fallSpeedCap) 
             rb.velocity = new Vector3(rb.velocity.x, ySpeed, rb.velocity.z); 
             if(ySpeed < 0) jumpHeld = false;
