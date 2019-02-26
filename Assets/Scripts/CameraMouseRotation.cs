@@ -32,7 +32,6 @@ public class CameraMouseRotation : MonoBehaviour
 
     }
 
-
     // Apply requested cursor state
     void SetCursorState()
     {
