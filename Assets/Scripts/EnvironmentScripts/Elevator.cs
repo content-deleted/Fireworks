@@ -25,7 +25,6 @@ public class Elevator : MonoBehaviour
                 moveDown = false;
             }
         }
-
     }
 
     private void OnTriggerExit()
