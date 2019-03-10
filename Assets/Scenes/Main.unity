@@ -2128,16 +2128,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2abbe8cf4e0053941994c5b296cba730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textSpeed: 0.05
+  textSpeed: 0.03
   messages:
-  - Welcome to the lab! Billy needs some help making fireworks before the big event
-    tonight.
-  - You can help Billy by guiding them to the elements stored in containers around
-    the lab.
-  - You can pick things up to help Billy, but only they can pick up the elements.
-    Together you'll need to solve some problems and hopefully learn a bit about fireworks
-    as you collect your materials.
-  - Here's how you can control Billy.
+  - Welcome to the lab! Your friend here needs some help making fireworks before the
+    big event tonight.
+  - You can help by guiding them to the elements stored in containers around the lab.
+  - You'll find some helpful information on fireworks and how to make them scattered
+    throughout the lab. Notes you've found will appear in your journal, please read
+    it if you ever feel lost!
+  - You can pick things up to help your friend, but only they can pick up the elements.
+    Together you'll need to solve some problems to navigate the lab.
 --- !u!114 &1096556514
 MonoBehaviour:
   m_ObjectHideFlags: 0

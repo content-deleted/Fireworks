@@ -13,7 +13,9 @@ public class CameraMouseRotation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        wantedMode = CursorLockMode.Locked;
+        // dont run this on android in case we forget to take it out
+        if(Application.platform == RuntimePlatform.Android) this.enabled = false;
+        else wantedMode = CursorLockMode.Locked;
     }
 
     // Update is called once per frame

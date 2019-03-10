@@ -19,6 +19,8 @@ public class PushText : MonoBehaviour
     void Update () {
         if(OVRInput.GetDown(OVRInput.Button.Any) || Input.GetKeyDown(KeyCode.Space) ) skip = true;
     }
+
+    public int waitBetweenMessages = 200;
     IEnumerator push()
     {
 
@@ -33,7 +35,7 @@ public class PushText : MonoBehaviour
                 yield return new WaitForSeconds(textSpeed);
             }
             if(!text.Equals(messages.Last())){
-                for(int i = 0; i < 20; i++){
+                for(int i = 0; i < waitBetweenMessages; i++){
                     yield return new WaitForSeconds(textSpeed);
                     if(skip) {
                         skip = false;
