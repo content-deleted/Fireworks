@@ -144,15 +144,12 @@ public class PlayerMovement : MonoBehaviour
     # endregion
 
         // Calculate force from input, angle, and speed
-        var r = cam.transform.right; r.y = 0;
-        var f = cam.transform.forward; f.y = 0;
-        force = f * zAxis * runSpeed + r * xAxis * runSpeed;
+        var direction = new Vector2(xAxis, zAxis).normalized;
+        var forward = cam.transform.forward; forward.y = 0;
+        var right = cam.transform.right; right.y = 0;
+        force = forward.normalized * direction.y * runSpeed + right.normalized * direction.x * runSpeed;
+        force.y = 0;
         
-        /*
-        var frict = frictionCoefficient;
-        if(Mathf.Abs(xAxis) < 0.1f && Mathf.Abs(zAxis)< 0.1f) {
-            frict *=2;
-        } */
         // Apply ground friction
         rb.velocity  /= ((grounded) ? frictionCoefficient : 1);
 

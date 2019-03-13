@@ -3,6 +3,8 @@ guid: 5cf641732ba657b47b5fc96945c2b77d
 TextureImporter:
   fileIDToRecycleName:
     21300000: Element_UI_SR
+    21300002: Element_UI_Cu
+    21300004: Element_UI_Ba
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -104,13 +106,53 @@ TextureImporter:
         width: 450
         height: 450
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 1e308d6518490ca40a0dbb12f37e8b4d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Element_UI_Cu
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1552
+        width: 449
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dffe267c8324284b989ddb6245ecb9a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Element_UI_Ba
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 1556
+        width: 449
+        height: 449
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37d4b4e9529bcbc42b965c539320839a
       vertices: []
       indices: 
       edges: []
