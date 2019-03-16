@@ -14,6 +14,9 @@ public class PlayerState : MonoBehaviour
     public GameObject PointerModel;
     public PointerController playerPointer;
 
+    // Controls if the player can switch their modes
+    public bool switchLocked = false;
+
     public void Awake () {
         Player = gameObject;
         singleton = this;
@@ -26,7 +29,7 @@ public class PlayerState : MonoBehaviour
     }
 
     public void Update () {
-        if(OVRInput.GetDown(OVRInput.Button.Back)) {
+        if(!switchLocked && OVRInput.GetDown(OVRInput.Button.Back)) {
             pointerMode = !pointerMode;
             setController();
         }

@@ -19,8 +19,11 @@ limitations under the License.
 
 ************************************************************************************/
 
+// Edited by Jacob Hann 3/13/2019
+
 using UnityEngine;
 using System.Collections; // required for Coroutines
+using System;
 
 /// <summary>
 /// Fades the screen from black after a new scene is loaded. Fade can also be controlled mid-scene using SetUIFade and SetFadeLevel
@@ -108,11 +111,12 @@ public class OVRScreenFade : MonoBehaviour
     /// <summary>
     /// Start a fade out
     /// </summary>
-    public void FadeOut()
-    {
-        StartCoroutine(Fade(0,1));
-    }
+    public void FadeOut(Action callback = null) => StartCoroutine(Fade(0,1, callback));
 
+    /// <summary>
+    /// Starts a fade out followed by a fade in
+    /// </summary>
+    public void StartTransition(Action callback = null) => StartCoroutine(Fade(0,1, () => {callback?.Invoke(); StartCoroutine(Fade(1,0));}));
 
 	/// <summary>
 	/// Starts a fade in when a new level is loaded
@@ -177,7 +181,7 @@ public class OVRScreenFade : MonoBehaviour
 	/// <summary>
 	/// Fades alpha from 1.0 to 0.0
 	/// </summary>
-	IEnumerator Fade(float startAlpha, float endAlpha)
+	IEnumerator Fade(float startAlpha, float endAlpha, Action callback = null)
 	{
 		float elapsedTime = 0.0f;
 		while (elapsedTime < fadeTime)
@@ -187,6 +191,7 @@ public class OVRScreenFade : MonoBehaviour
             SetMaterialAlpha();
 			yield return new WaitForEndOfFrame();
 		}
+        callback?.Invoke();
 	}
 
     /// <summary>

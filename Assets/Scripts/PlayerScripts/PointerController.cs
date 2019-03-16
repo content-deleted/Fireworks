@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PointerController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PointerController : MonoBehaviour
     public GameObject lightCursor;
     public GameObject pointEnd;
     public GameObject handModel;
+    public OVRScreenFade screenfade;
+    public bool creationMode = false;
     private Rigidbody heldObject;
     private GameObject line;
     private LineRenderer lr;
@@ -49,7 +52,7 @@ public class PointerController : MonoBehaviour
                 var r = hit.rigidbody;
                 // if the player is holding down
                 if( OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ) {
-                    if (r!=null) {
+                    if (r!=null && r.gameObject.tag != "Player") {
                         heldObject = r;
                         heldObject.useGravity = false;
                         couldRotate = heldObject.freezeRotation; // store previous rotation setting
@@ -68,6 +71,10 @@ public class PointerController : MonoBehaviour
                         animator.SetTrigger("StartPoint");
 
                         prevRotation = handModel.transform.rotation.eulerAngles.z;
+                    }
+                    if(creationMode && r.gameObject.tag == "Player") {
+                        // Make a popup
+                        screenfade.FadeOut( () => SceneManager.LoadScene("FireworkScene") );
                     }
                 }
                 // update the point light
