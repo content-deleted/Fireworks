@@ -5,12 +5,21 @@ using System.Linq;
 
 public class UIDisplay : MonoBehaviour
 {
+    [System.Serializable]
+    public class UIElement {
+        public GameObject gameObject;
+        public bool activeOnStart;
+        public bool activeOnEnd;
+        public bool runImmidiate;
+        public string GameObjectFromResources;
+    }
+
     public static UIDisplay singleton;
     public void Awake() {
-        foreach(GameObject g in elements) g.SetActive(false);
+        foreach(UIElement e in elements) e.gameObject.SetActive(false);
         singleton = this;
     }
-    public List<GameObject> elements = new List<GameObject>();
+    public List<UIElement> elements = new List<UIElement>();
 
     public GameObject PressAnyButton;
 
@@ -42,7 +51,7 @@ public class UIDisplay : MonoBehaviour
     }
     void Advance() {
         if(currentElement > elements.Count) return;
-        if(currentElement > 0) elements[currentElement-1].SetActive(false);
+        if(currentElement > 0) elements[currentElement-1].gameObject.SetActive(elements[currentElement-1].activeOnEnd);
 
         if(currentElement == elements.Count) {
             PressAnyButton.SetActive(false);
@@ -51,8 +60,13 @@ public class UIDisplay : MonoBehaviour
             return;
         }
 
-        elements[currentElement].SetActive(true);
+        elements[currentElement].gameObject.SetActive(elements[currentElement].activeOnStart);
         currentElement++;
+        
+        while(currentElement < elements.Count && elements[currentElement].runImmidiate){
+            elements[currentElement].gameObject.SetActive(true);
+            elements.RemoveAt(currentElement);
+        }
     }
 
     IEnumerator delayedActivation () {
