@@ -1019,6 +1019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRend: {fileID: 477190898}
   fadeSpeed: 0.05
+  rot: {x: 0, y: 0, z: 0}
   offsetSpeed: 0.05
 --- !u!1 &382115366
 GameObject:
@@ -3207,19 +3208,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 347c11a87cce3014b9e137630a20e424, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 347c11a87cce3014b9e137630a20e424, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 347c11a87cce3014b9e137630a20e424, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 347c11a87cce3014b9e137630a20e424, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 347c11a87cce3014b9e137630a20e424, type: 3}
       propertyPath: m_RootOrder
@@ -3227,11 +3228,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 347c11a87cce3014b9e137630a20e424, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 347c11a87cce3014b9e137630a20e424, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 347c11a87cce3014b9e137630a20e424, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
