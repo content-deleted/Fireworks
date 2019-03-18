@@ -12,7 +12,7 @@ Shader "Custom/LineBend"
     SubShader
     {
         // Might change this later for transparent
-        Cull Off ZWrite On ZTest Always  
+        Cull Off ZWrite On
 
         Pass
         {
