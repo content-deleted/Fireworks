@@ -2,13 +2,12 @@ using UnityEngine;
 public class PlayerTextUI : MonoBehaviour
 {
 
-    private GameObject bubble;
+   public GameObject HelpfulText;
     void Start()
     {
-        GameObject bubble = new GameObject();
-        bubble.gameObject.SetActive(true);
         GetComponent<PushText>();
-        Destroy(gameObject);
+        HelpfulText.SetActive(true);
+        Destroy(HelpfulText);
     }
 
     void OnTriggerEnter(Collider other)
@@ -26,6 +25,6 @@ public class PlayerTextUI : MonoBehaviour
 
     void OnTriggerExit()
     {
-        bubble.gameObject.SetActive(false);
+        HelpfulText.SetActive(false);
     }
 }
