@@ -1,30 +1,66 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 public class PlayerTextUI : MonoBehaviour
 {
+    public static PlayerTextUI singleton;
+    private Text textRender;
 
-   public GameObject HelpfulText;
+    private Image image;
+    public List<string> helpMessages = new List<string>();
+
+    public float textSpeed;
     void Start()
     {
-        GetComponent<PushText>();
-        HelpfulText.SetActive(true);
-        Destroy(HelpfulText);
+        textRender = GetComponent<Text>();
+        image = GetComponent<Image>();
+        singleton = this;
     }
 
-    void OnTriggerEnter(Collider other)
+    void onEnable()
     {
-        if (other.CompareTag("Player"))
+        var tempColor = image.color;
+        tempColor.a = 0f;
+        image.color = tempColor;
+    }
+
+    public int waitBetweenMessages = 200;
+    IEnumerator push()
+    {
+        while (image.color.a < 1)
         {
-            GetComponent<PlayerTextUI>().Start();
+
+            var temp = image.color;
+            temp.a += 0.01f;
+            image.color = temp;
+            yield return new WaitForEndOfFrame();
         }
-    }
+        while (helpMessages.Any())
+            foreach (string text in helpMessages.ToList())
+            {
+                foreach (char c in text.ToCharArray())
+                {
+                    textRender.text = textRender.text + c;
+                    yield return new WaitForSeconds(textSpeed);
+                }
+                if (!text.Equals(helpMessages.Last()))
+                {
+                    yield return new WaitForSeconds(textSpeed * 50);
+                    textRender.text = "";
+                }
+            }
 
-    void OnTriggerStay()
-    {
-        //TBD
-    }
+        while (image.color.a > 0)
+        {
 
-    void OnTriggerExit()
-    {
-        HelpfulText.SetActive(false);
+            var temp = image.color;
+            temp.a -= 0.01f;
+            image.color = temp;
+            yield return new WaitForEndOfFrame();
+        }
+
+        transform.gameObject.SetActive(false);
     }
 }
