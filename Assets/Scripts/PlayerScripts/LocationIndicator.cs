@@ -25,7 +25,7 @@ public class LocationIndicator : MonoBehaviour
             
             //put the arrow rotate around
             var dirToPlayer = transform.parent.InverseTransformDirection((playerRend.transform.position - transform.parent.position).normalized)/(10+(Mathf.Cos(ticker)+1) );
-            transform.localPosition = new Vector3(dirToPlayer.x,dirToPlayer.y,0.15f);
+            transform.localPosition = new Vector3(dirToPlayer.x,dirToPlayer.y,0.25f);
             transform.LookAt(transform.parent.TransformDirection(-dirToPlayer*2),transform.parent.forward );
             transform.Rotate(rot,Space.Self);
         }

@@ -1550,7 +1550,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elements:
-  - {fileID: 597319375}
+  - gameObject: {fileID: 597319375}
+    activeOnStart: 1
+    activeOnEnd: 0
+    runImmidiate: 0
+    GameObjectFromResources: 
   PressAnyButton: {fileID: 1574845711}
   currentElement: 0
   StartFromBeginning: 1

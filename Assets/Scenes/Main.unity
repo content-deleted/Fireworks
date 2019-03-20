@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRend: {fileID: 477190898}
   fadeSpeed: 0.05
-  rot: {x: 0, y: 0, z: 0}
+  rot: {x: 180, y: 0, z: 90}
   offsetSpeed: 0.05
 --- !u!1 &382115366
 GameObject:
@@ -3139,7 +3139,7 @@ MonoBehaviour:
   vrRig: {fileID: 1636557976602326509}
   screenfade: {fileID: 7052903362527679010}
   fireworksWorkStationScene: FireworksCreation
-  minutesStart: 8
+  minutesStart: 0.5
   end: 0
 --- !u!114 &1946864579
 MonoBehaviour:
@@ -3196,7 +3196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 347c11a87cce3014b9e137630a20e424, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.006
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 347c11a87cce3014b9e137630a20e424, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3204,7 +3204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 347c11a87cce3014b9e137630a20e424, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.15
+      value: 0.196
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 347c11a87cce3014b9e137630a20e424, type: 3}
       propertyPath: m_LocalRotation.x
