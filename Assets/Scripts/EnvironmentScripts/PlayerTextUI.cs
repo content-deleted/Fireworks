@@ -12,20 +12,23 @@ public class PlayerTextUI : MonoBehaviour
     public List<string> helpMessages = new List<string>();
 
     public float textSpeed;
-    void Start()
+    void Awake()
     {
         textRender = GetComponent<Text>();
-        image = GetComponent<Image>();
+        image = transform.parent.GetComponent<Image>();
         singleton = this;
-    }
-
-    void onEnable()
-    {
         var tempColor = image.color;
         tempColor.a = 0f;
         image.color = tempColor;
+        transform.parent.gameObject.SetActive(false);
     }
 
+    public void startPush(){
+        if(!gameObject.activeInHierarchy){
+            transform.parent.gameObject.SetActive(true);
+            StartCoroutine(push());
+        }
+    }
     public int waitBetweenMessages = 200;
     IEnumerator push()
     {
@@ -61,6 +64,6 @@ public class PlayerTextUI : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        transform.gameObject.SetActive(false);
+        transform.parent.gameObject.SetActive(false);
     }
 }
