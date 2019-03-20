@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class ShowUI : MonoBehaviour
 {
-    [SerializeField] private GameObject customSprite;
+    [SerializeField] 
+    private GameObject customSprite;
     private GameObject objClone;
 
     Animator animator;
