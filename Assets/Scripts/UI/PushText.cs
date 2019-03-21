@@ -19,11 +19,10 @@ public class PushText : MonoBehaviour
     void Update () {
         if(OVRInput.GetDown(OVRInput.Button.Any) || Input.GetKeyDown(KeyCode.Space) ) skip = true;
     }
-
+    
     public int waitBetweenMessages = 200;
     IEnumerator push()
     {
-
         foreach(string text in messages) {
             foreach(char c in text.ToCharArray()){
                 if(skip) {

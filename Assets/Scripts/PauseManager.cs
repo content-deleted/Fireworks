@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using System;
 
 public class PauseManager : MonoBehaviour
@@ -8,6 +9,8 @@ public class PauseManager : MonoBehaviour
     public static PauseManager singleton;
     public GameObject PauseMenu;
     public GameObject HUD;
+    public GameObject Eyetracker;
+    void Awake() => ((Application.platform == RuntimePlatform.Android) ? GetComponent<OVRInputModule>() : GetComponent<StandaloneInputModule>() as MonoBehaviour).enabled = true;
     void Start()
     {
         Paused = false;
@@ -23,8 +26,19 @@ public class PauseManager : MonoBehaviour
             Time.timeScale = (value) ? 0 : 1;
             holdTime = 0;
 
-            if(value) PlayerState.singleton.switchLocked = true;
-            else StartCoroutine(unlockDelay());
+            if(value) {
+                PlayerState.singleton.switchLocked = true;
+
+                var f = Eyetracker.transform.forward;
+                f.y = 0;
+                PauseMenu.transform.position = Eyetracker.transform.position + f.normalized/5;
+                PauseMenu.transform.LookAt(PauseMenu.transform.position + f.normalized);
+            }
+            else {
+                StartCoroutine(unlockDelay());
+            }
+
+
         }
     }
     public IEnumerator unlockDelay () {
