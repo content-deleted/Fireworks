@@ -49,17 +49,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        thisFrameJump = OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger);
-        if(!PlayerState.singleton.pointerMode && !UIDisplay.singleton.Active) Move();
-        Animations();
+        if(!PauseManager.singleton.Paused){
+            thisFrameJump = OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger);
+            if(!PlayerState.singleton.pointerMode && !UIDisplay.singleton.Active) Move();
+            Animations();
 
-        // At the end of each frame we set grounded to false so that
-        // OnCollisionStay needs to verify that we are still grounded
-        // Obviously it would be better to use OnCollisionExit 
-        // but we can't check the normal
-        if(grounded && !Physics.Raycast(playerCollider.bounds.center, Vector3.down, playerCollider.bounds.extents.y + 0.5f)) grounded = false;
+            // At the end of each frame we set grounded to false so that
+            // OnCollisionStay needs to verify that we are still grounded
+            // Obviously it would be better to use OnCollisionExit 
+            // but we can't check the normal
+            if(grounded && !Physics.Raycast(playerCollider.bounds.center, Vector3.down, playerCollider.bounds.extents.y + 0.5f)) grounded = false;
 
-        lastFrameJump = thisFrameJump;
+            lastFrameJump = thisFrameJump;
+        }
     }
     
     private void Animations() 
