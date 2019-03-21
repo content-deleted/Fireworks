@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(!PauseManager.singleton?.Paused!=true){
+        if(PauseManager.singleton?.Paused!=true){
             thisFrameJump = OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger);
             if(!PlayerState.singleton.pointerMode && !UIDisplay.singleton.Active) Move();
             Animations();

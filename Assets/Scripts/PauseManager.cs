@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using System;
+
 
 public class PauseManager : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class PauseManager : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject HUD;
     public GameObject Eyetracker;
+    public OVRScreenFade screenfade;
     void Awake() => ((Application.platform == RuntimePlatform.Android) ? GetComponent<OVRInputModule>() : GetComponent<StandaloneInputModule>() as MonoBehaviour).enabled = true;
     void Start()
     {
@@ -65,5 +68,10 @@ public class PauseManager : MonoBehaviour
                 Paused = false;
             }
         }
+    }
+    
+    public void ResetGame () {
+        Paused = false;
+        screenfade.FadeOut(() => SceneManager.LoadScene("Main", LoadSceneMode.Single));
     }
 }
