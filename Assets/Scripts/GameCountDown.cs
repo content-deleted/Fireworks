@@ -13,10 +13,11 @@ public class GameCountDown : MonoBehaviour
     public void Start () => text = GetComponent<Text>();
     public bool end=false;
     public void Update () {
-        var t = ((minutesStart * 60) - Time.timeSinceLevelLoad);
-        text.text =  $"{(int)(t/60)}:{(int)(t%60)}";
-        if(t<=0&&!end) EndGame();
-
+        if(!end) {
+            var t = ((minutesStart * 60) - Time.timeSinceLevelLoad);
+            text.text =  $"{(int)(t/60)}:{((int)(t%60)).ToString("D2")}";
+            if(t<=0) EndGame();
+        }
     }
 
     public void EndGame() {
