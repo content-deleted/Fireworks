@@ -44,7 +44,7 @@ public class PointerController : MonoBehaviour
     }
     void Update()
     {
-        if(PlayerState.singleton.pointerMode && !PauseManager.singleton.Paused) { 
+        if(PlayerState.singleton.pointerMode && PauseManager.singleton?.Paused!=true) { 
             RaycastHit hit;
 
             if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity))//, layerNum))
