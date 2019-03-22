@@ -13,7 +13,10 @@ public class PauseManager : MonoBehaviour
     public GameObject HUD;
     public GameObject Eyetracker;
     public OVRScreenFade screenfade;
-    void Awake() => ((Application.platform == RuntimePlatform.Android) ? GetComponent<OVRInputModule>() : GetComponent<StandaloneInputModule>() as MonoBehaviour).enabled = true;
+    void Awake() {
+        ((Application.platform == RuntimePlatform.Android) ? GetComponent<OVRInputModule>() : GetComponent<StandaloneInputModule>() as MonoBehaviour).enabled = true;
+        Debug.Log("yeet");
+    }
     void Start()
     {
         Paused = false;
