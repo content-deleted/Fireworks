@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class ShowUI : MonoBehaviour
 {
     [SerializeField] 
-    private GameObject customSprite;
+    private GameStateManager.elements element;
     private GameObject objClone;
 
     Animator animator;
@@ -20,11 +21,13 @@ public class ShowUI : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            objClone = Instantiate(customSprite, other.transform.position + Vector3.up * 4, Quaternion.identity);
+            objClone = Instantiate(Resources.Load($"{GameStateManager.getElementName(element)}_UI_Display") as GameObject, other.transform.position + Vector3.up * 4, Quaternion.identity);
             animator.SetTrigger("PickUp"); 
             PlayerState.singleton.GetComponent<Rigidbody>().velocity = Vector3.zero;
             UIDisplay.singleton.Active = true;
             StartCoroutine(endPickup());
+
+            GameStateManager.singleton.collect(element);
         }
     }
 
