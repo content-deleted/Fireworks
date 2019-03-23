@@ -88,15 +88,20 @@ public class PointerController : MonoBehaviour
             }
             // HOLDING OBJECT update
             else if(heldObject != null) {
+                // Check input for moving object depth
+                Vector2 primaryTouchpad = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
+                if(primaryTouchpad.y != 0 && primaryTouchpad.y>0 || Vector3.Distance(transform.position, grabPoint.transform.position) > 4.5f)
+                    grabPoint.transform.position += 0.3f * transform.forward * primaryTouchpad.y;
+
+                Vector3 curRotation = new Vector3(0,0,handModel.transform.rotation.eulerAngles.z - prevRotation);
+                heldObject.transform.Rotate(handModel.transform.forward, curRotation.z);
+                prevRotation = handModel.transform.rotation.eulerAngles.z;
+
                 Vector3 toObject = grabPoint.transform.position - heldObject.transform.position;
                 heldObject.velocity *= 0.85f;
                 heldObject.velocity += toObject;
 
                 updateSegments(pointEnd.transform.position, heldObject.transform.position);
-
-                Vector3 curRotation = new Vector3(0,0,handModel.transform.rotation.eulerAngles.z - prevRotation);
-                heldObject.transform.Rotate(handModel.transform.forward, curRotation.z);
-                prevRotation = handModel.transform.rotation.eulerAngles.z;
             }
         }
         else {

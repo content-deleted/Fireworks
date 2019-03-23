@@ -16,8 +16,7 @@
         Pass
         {
             CGPROGRAM
-// Upgrade NOTE: excluded shader from DX11; has structs without semantics (struct v2f members viewDir)
-#pragma exclude_renderers d3d11
+
             #pragma vertex vert
             #pragma fragment frag
             // make fog work

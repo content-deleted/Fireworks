@@ -29,7 +29,7 @@ public class PlayerState : MonoBehaviour
     }
 
     public void Update () {
-        if(!switchLocked && OVRInput.GetDown(OVRInput.Button.Back)) {
+        if(!switchLocked && !playerPointer.creationMode && OVRInput.GetDown(OVRInput.Button.Back)) {
             pointerMode = !pointerMode;
             setController();
         }

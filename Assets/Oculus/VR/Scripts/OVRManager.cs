@@ -938,16 +938,16 @@ public class OVRManager : MonoBehaviour
 
 	internal static string UnityAlphaOrBetaVersionWarningMessage = "WARNING: It's not recommended to use Unity alpha/beta release in Oculus development. Use a stable release if you encounter any issue.";
 
-#region Unity Messages
+   #region Unity Messages
 
 	private void Awake()
 	{
 		// Only allow one instance at runtime.
 		if (instance != null)
 		{
-			enabled = false;
-			DestroyImmediate(this);
-			return;
+			instance.enabled = false;
+			DestroyImmediate(instance.gameObject);
+			//return;
 		}
 
 		instance = this;

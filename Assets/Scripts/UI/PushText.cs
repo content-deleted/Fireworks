@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using Fireworks;
 
 public class PushText : MonoBehaviour
 {
@@ -19,11 +20,17 @@ public class PushText : MonoBehaviour
     void Update () {
         if(OVRInput.GetDown(OVRInput.Button.Any) || Input.GetKeyDown(KeyCode.Space) ) skip = true;
     }
-    
+    void OnEnable() {
+        if(running) StartCoroutine(push());
+    }
     public int waitBetweenMessages = 200;
+    private bool running;
+
     IEnumerator push()
     {
-        foreach(string text in messages) {
+        running = true;
+        foreach(string text in messages.ToList()) {
+            textObject.text = "";
             foreach(char c in text.ToCharArray()){
                 if(skip) {
                     textObject.text = text;
@@ -43,7 +50,9 @@ public class PushText : MonoBehaviour
                 }
                 textObject.text = "";
             }
+            messages.Remove(text);
         }
         UIDisplay.singleton.Locked = false;
+        running = false;
     }
 }

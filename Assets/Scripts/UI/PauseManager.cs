@@ -9,24 +9,32 @@ using System;
 public class PauseManager : MonoBehaviour
 {
     public static PauseManager singleton;
-    public GameObject PauseMenu;
-    public GameObject HUD;
-    public GameObject Eyetracker;
-    public OVRScreenFade screenfade;
-    void Awake() {
-        ((Application.platform == RuntimePlatform.Android) ? GetComponent<OVRInputModule>() : GetComponent<StandaloneInputModule>() as MonoBehaviour).enabled = true;
-        Debug.Log("yeet");
-    }
+    private GameObject PauseMenu;
+    private GameObject HUD;
+    private GameObject Eyetracker;
+    private OVRScreenFade screenfade;
+    void Awake() => ((Application.platform == RuntimePlatform.Android) ? GetComponent<OVRInputModule>() : GetComponent<StandaloneInputModule>() as MonoBehaviour).enabled = true;
     void Start()
     {
-        Paused = false;
+        // Get the gameobject references
+        var rig = GameObject.Find("OurOVRrig");
+        PauseMenu = rig.transform.Find("PauseCanvas").gameObject;
+        Eyetracker = rig.transform.Find("TrackingSpace/CenterEyeAnchor").gameObject;
+        HUD = Eyetracker.transform.Find("HudCanvas").gameObject;
+        screenfade = Eyetracker.GetComponent<OVRScreenFade>();
+
         singleton = this;
+        Paused = false;
     }
     private bool paused = false;
+    
+    public event Action onUnPause;
+    public event Action onPause;
+    public float TimeSpentPaused;
+    private float pauseStartTime;
     public bool Paused {
         get => paused;
         set {
-            paused = value;
             PauseMenu.SetActive(value);
             HUD.SetActive(!value);
             Time.timeScale = (value) ? 0 : 1;
@@ -35,16 +43,25 @@ public class PauseManager : MonoBehaviour
             if(value) {
                 PlayerState.singleton.switchLocked = true;
 
-                var f = Eyetracker.transform.forward;
+                var f = Camera.main.transform.forward;
                 f.y = 0;
-                PauseMenu.transform.position = Eyetracker.transform.position + f.normalized/5;
+                PauseMenu.transform.position = Camera.main.transform.position + f.normalized/5;
                 PauseMenu.transform.LookAt(PauseMenu.transform.position + f.normalized);
+
+                if(!paused) {
+                    pauseStartTime = Time.unscaledTime;
+                    onPause?.Invoke();
+                }
             }
             else {
                 StartCoroutine(unlockDelay());
+                if(paused) {
+                    TimeSpentPaused += Time.unscaledTime-pauseStartTime;
+                    onUnPause?.Invoke();
+                }
             }
 
-
+            paused = value;
         }
     }
     public IEnumerator unlockDelay () {
