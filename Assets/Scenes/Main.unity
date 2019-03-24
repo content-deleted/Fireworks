@@ -1416,6 +1416,7 @@ GameObject:
   - component: {fileID: 564803025}
   - component: {fileID: 564803024}
   - component: {fileID: 564803023}
+  - component: {fileID: 564803026}
   m_Layer: 10
   m_Name: LightCursor
   m_TagString: Untagged
@@ -1469,7 +1470,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 203d34dc6e833a5429b528db8c445fbe, type: 2}
+  - {fileID: 2100000, guid: c23ad74ac5a6c8d4480aadd8335fa6a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1497,6 +1498,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564803021}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &564803026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564803021}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d2e3e45a4fd3445a4166ee11983764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  axis: {x: 1, y: 1, z: 1}
+  offset: {x: 2, y: 2, z: 2}
 --- !u!1001 &568594109
 PrefabInstance:
   m_ObjectHideFlags: 0

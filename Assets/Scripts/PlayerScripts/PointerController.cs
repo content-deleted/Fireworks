@@ -21,6 +21,7 @@ public class PointerController : MonoBehaviour
     public Material lineMat;
     private float prevRotation; 
     private bool couldRotate;
+    private bool redOrBlue;
     void Awake() {
         line = new GameObject();
         line.AddComponent<LineRenderer>();
@@ -80,6 +81,14 @@ public class PointerController : MonoBehaviour
                 // update the point light
                 else {
                     lightCursor.transform.position = hit.point;
+
+                    // Update color of cursor
+                    var rob = r != null && r.tag != "Player";
+                    if(redOrBlue != rob) {
+                        lightCursor.GetComponent<Renderer>().material.SetColor("_Color", (rob) ? new Color(0.85f,0.45f,0.15f,1) : new Color(0.6f,0.6f,0.95f,1));
+                        lightCursor.GetComponent<Pulse>().enabled = rob;
+                    }
+                    redOrBlue = rob;
                 }
             }
             // LET GO OF OBJECT
