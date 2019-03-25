@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PointerController : MonoBehaviour
 {
     const int layerNum = 1 << 9; 
+    public static PointerController singleton;
     public GameObject grabPoint;
     public GameObject lightCursor;
     public GameObject pointEnd;
@@ -42,13 +43,16 @@ public class PointerController : MonoBehaviour
 
         // Store a reference to the hand's animator
         animator = handModel.GetComponent<Animator>();
+
+        singleton = this;
     }
+    const int ignoreMask = ~(1 << 12);
     void Update()
     {
         if(PlayerState.singleton.pointerMode && PauseManager.singleton?.Paused!=true) { 
             RaycastHit hit;
 
-            if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity))//, layerNum))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, ignoreMask))//, layerNum))
             {
                 var r = hit.rigidbody;
                 // if the player is holding down

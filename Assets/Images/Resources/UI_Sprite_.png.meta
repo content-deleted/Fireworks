@@ -5,6 +5,7 @@ TextureImporter:
     21300000: UI_Sprite_Sr
     21300002: UI_Sprite_Cu
     21300004: UI_Sprite_Ba
+    21300006: UI_Sprite_C
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -126,7 +127,7 @@ TextureImporter:
         width: 448
         height: 450
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,13 +147,33 @@ TextureImporter:
         width: 450
         height: 450
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: d04ed8858e22031439397b851bf334fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Sprite_C
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 2541
+        width: 449
+        height: 449
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29478b9ae9f62f143ab6c304bdefacad
       vertices: []
       indices: 
       edges: []

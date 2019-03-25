@@ -21,7 +21,8 @@ public class ShowUI : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            objClone = Instantiate(Resources.Load($"{GameStateManager.getElementName(element)}_UI_Display") as GameObject, other.transform.position + Vector3.up * 4, Quaternion.identity);
+            objClone = Instantiate(Resources.Load($"UI_Display") as GameObject, other.transform.position + Vector3.up * 4, Quaternion.identity);
+            objClone.GetComponent<SpriteRenderer>().sprite = GameStateManager.singleton.UI_Sprites[(int)element];
             animator.SetTrigger("PickUp"); 
             PlayerState.singleton.GetComponent<Rigidbody>().velocity = Vector3.zero;
             UIDisplay.singleton.Active = true;

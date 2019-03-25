@@ -24,7 +24,7 @@ public class GameStateManager : MonoBehaviour
     private GameObject dex;
 
     bool [] collected = new bool[11];
-    Sprite [] UI_Sprites;
+    public Sprite [] UI_Sprites;
     void Awake()
     {
         if(singleton == null) singleton = this;
@@ -34,7 +34,7 @@ public class GameStateManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-        UI_Sprites = Resources.LoadAll<Sprite>($"UI_Sprite_");
+        var Sprites = Resources.LoadAll<Sprite>($"UI_Sprite_");
     }
 
     void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
