@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour {
     void OnCollisionEnter(Collision c){
-        var r = c.rigidbody;
-        if(r!=null){
-            r.transform.parent = this.transform;
-        }
+        if(c.transform.tag == "Player")
+            c.transform.parent = this.transform;
     }
-    void OnCollisionExit(Collision c){
-        var r = c.rigidbody;
-        if(r!=null){
-            r.transform.parent = null;
-        }
+    void OnCollisionExit(Collision c) {
+        if(c.transform.tag == "Player"&& c.transform.parent == transform.parent)
+            c.transform.parent = null;
     }
 }
