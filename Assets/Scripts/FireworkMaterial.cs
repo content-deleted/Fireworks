@@ -23,7 +23,8 @@ public class FireworkMaterial : MonoBehaviour
                 inArea = true;
                 break;
             case "Burner":
-                PointerController.singleton.disableLine();
+                if(PointerController.singleton.heldObject !=null) PointerController.singleton.disableLine();
+                ElementCombine.addElement(element);
                 Respawn();
                 break;
         }

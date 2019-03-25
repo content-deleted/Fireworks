@@ -13,7 +13,8 @@ public class PointerController : MonoBehaviour
     public GameObject handModel;
     public OVRScreenFade screenfade;
     public bool creationMode = false;
-    private Rigidbody heldObject;
+    [HideInInspector]
+    public Rigidbody heldObject;
     private GameObject line;
     private LineRenderer lr;
     private LineBendController lineBend;

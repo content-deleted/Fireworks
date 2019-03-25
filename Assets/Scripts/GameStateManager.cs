@@ -21,6 +21,13 @@ public class GameStateManager : MonoBehaviour
         N,
         O,
     }
+    [Serializable]
+    public class chemical {
+        public List<elements> elements = new List<elements>();
+        public Sprite chemSprite;
+        public bool crafted = false;
+    }
+    public List<chemical> chemicals = new List<chemical>();
     private GameObject dex;
 
     bool [] collected = new bool[11];
@@ -35,6 +42,7 @@ public class GameStateManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
         var Sprites = Resources.LoadAll<Sprite>($"UI_Sprite_");
+
     }
 
     void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
