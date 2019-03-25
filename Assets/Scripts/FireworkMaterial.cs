@@ -29,6 +29,10 @@ public class FireworkMaterial : MonoBehaviour
         }
     }
 
+    void OnTriggerStay (Collider other) {
+        if(other.tag == "TableArea") inArea = true;
+    }
+
     void OnCollisionEnter(Collision c) {
         if(!inArea) Respawn();
     }

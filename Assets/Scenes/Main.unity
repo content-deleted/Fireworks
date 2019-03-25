@@ -2778,7 +2778,7 @@ MonoBehaviour:
   vrRig: {fileID: 1636557976602326509}
   screenfade: {fileID: 7052903362527679010}
   fireworksWorkStationScene: FireworksCreation
-  minutesStart: 0.2
+  minutesStart: 4
   end: 0
 --- !u!114 &1946864579
 MonoBehaviour:
