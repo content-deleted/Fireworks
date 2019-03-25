@@ -9,6 +9,7 @@ TextureImporter:
     21300008: UI_Sprite_BaCl2
     21300010: UI_Sprite_SrCO3
     21300012: UI_Sprite_CaCl2
+    21300014: UI_Sprite_Cl
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -190,7 +191,7 @@ TextureImporter:
         width: 447
         height: 446
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,7 +211,7 @@ TextureImporter:
         width: 448
         height: 447
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -230,13 +231,33 @@ TextureImporter:
         width: 447
         height: 447
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 095b19614053d074aa0861043ff7b14e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Sprite_Cl
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 2032
+        width: 449
+        height: 449
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24268e3a54e73034990febc67896353e
       vertices: []
       indices: 
       edges: []
