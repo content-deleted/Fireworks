@@ -8,12 +8,21 @@ public class ElementCombine : MonoBehaviour
 {
     public static List<elements> combined = new List<elements>();
     public static float displayTime = 5;
+    
+    /// <summary>
+    /// Adds an element to the list of combined elements
+    /// The we check if its valid or not and update the UI 
+    /// Provides feedback and stores crafted elements
+    /// </summary>
+    /// <param name="Element to be added"></param>
     public static void addElement(elements e)
     {
         combined.Add(e);
         bool valid = false;
         foreach(chemical c in GameStateManager.singleton.chemicals){
+            // store a mutable copy of our list
             List<elements> chemComp = c.elements.ToList();
+
             for(int i =0; i< combined.Count; i++){
                 if(!chemComp.Contains(combined[i])){
                     break;
@@ -23,19 +32,16 @@ public class ElementCombine : MonoBehaviour
                 chemComp.Remove(combined[i]);
             }
             if(valid){
-                if(chemComp.Any()) break;
-                else {
-                    craftChemical(c);
-                }
+                // while something may be valid, it may not have all the requirements to create a full chemical
+                if(!chemComp.Any()) craftChemical(c);
+                break;
             }
         }
         if(!valid){
             // clear combined
             combined = new List<elements>();
             // show feedback
-            var objClone = Instantiate(Resources.Load("UI_Display") as GameObject, t.position + Vector3.up * 4, Quaternion.identity);
-            objClone.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("X");
-            Destroy(objClone, displayTime);
+            showFeedback(Resources.Load<Sprite>("X"));
         }
 
         // update feedback 
@@ -45,14 +51,18 @@ public class ElementCombine : MonoBehaviour
     
     public static void craftChemical(chemical chem) {
         chem.crafted = true;
-        var objClone = Instantiate(Resources.Load("UI_Display") as GameObject, t.position + Vector3.up * 4, Quaternion.identity);
-        objClone.GetComponent<SpriteRenderer>().sprite = chem.chemSprite;
-        Destroy(objClone, displayTime);
+        showFeedback(chem.chemSprite);
 
         // clear combined
         combined = new List<elements>();
     }
 
+    /// <summary>
+    /// This method generates a string for the stored list of elements (combined)
+    /// It counts duplicate elmeents together and formates them
+    /// IE instead of printing ClBaCl -> BaCl2
+    /// </summary>
+    /// <returns> String version of current *chemical* </returns>
     public static string toString(){
         var sorted = combined.OrderBy(x => (int)x);
         string r = sorted.First().ToString();
@@ -66,6 +76,16 @@ public class ElementCombine : MonoBehaviour
         }
         if(inc>0) r += (inc+1).ToString();
         return r;
+    }
+
+    /// <summary>
+    /// Creates a new instance of the UI display 
+    /// </summary>
+    /// <param name="Sprite to set"></param>
+    public static void showFeedback(Sprite sprite){
+        var objClone = Instantiate(Resources.Load("UI_Display") as GameObject, t.position + Vector3.up * 4, Quaternion.identity);
+        objClone.GetComponent<SpriteRenderer>().sprite = sprite;
+        Destroy(objClone, displayTime);
     }
     
     private static Transform t;
