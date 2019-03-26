@@ -8,21 +8,22 @@ public class ElementCombine : MonoBehaviour
 {
     public static List<elements> combined = new List<elements>();
     public static float displayTime = 5;
-    
+
     /// <summary>
     /// Adds an element to the list of combined elements
     /// The we check if its valid or not and update the UI 
     /// Provides feedback and stores crafted elements
     /// </summary>
     /// <param name="Element to be added"></param>
-    public static void addElement(elements e)
-    {
+    public static void addElement(elements e){
         combined.Add(e);
         bool valid = false;
         foreach(chemical c in GameStateManager.singleton.chemicals){
             // store a mutable copy of our list
             List<elements> chemComp = c.elements.ToList();
 
+            // iterate through the list of combined elements and check if they are in the chemical
+            // remove elements as we go to ensure that something with multiple of the same elements is handled
             for(int i =0; i< combined.Count; i++){
                 if(!chemComp.Contains(combined[i])){
                     break;
@@ -45,11 +46,10 @@ public class ElementCombine : MonoBehaviour
         }
 
         // update feedback 
-        t.GetChild(0).GetComponent<Text>().text = (combined.Any()) ? toString() : "";
-
+        t.GetChild(0).GetComponent<Text>().text = combined.Any() ? toString() : "";
     }
     
-    public static void craftChemical(chemical chem) {
+    public static void craftChemical(chemical chem){
         chem.crafted = true;
         showFeedback(chem.chemSprite);
 
