@@ -86,7 +86,6 @@ GameObject:
   - component: {fileID: 4616222927653018060}
   - component: {fileID: 4616222927653018051}
   - component: {fileID: 4616222927653018050}
-  - component: {fileID: 4616222927653018061}
   m_Layer: 10
   m_Name: HelpText
   m_TagString: Untagged
@@ -155,19 +154,3 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
---- !u!114 &4616222927653018061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4616222927653018063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68d82501a39f9d04491e16def0c6a026, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  helpMessages:
-  - Hello, this is a test!
-  textSpeed: 0.03
-  waitBetweenMessages: 200
