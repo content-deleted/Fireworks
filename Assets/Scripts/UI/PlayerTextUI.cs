@@ -8,18 +8,18 @@ public class PlayerTextUI : MonoBehaviour
     public static PlayerTextUI singleton;
     private Text textRender;
 
-    private Image image;
+    private List<Image> images;
     public List<string> helpMessages = new List<string>();
 
     public float textSpeed;
     void Awake()
     {
         textRender = GetComponent<Text>();
-        image = transform.parent.GetComponent<Image>();
+        images = transform.parent.GetComponentsInChildren<Image>().ToList();
         singleton = this;
-        var tempColor = image.color;
+        var tempColor = Color.white;
         tempColor.a = 0f;
-        image.color = tempColor;
+        foreach(Image i in images) i.color = tempColor;
         transform.parent.gameObject.SetActive(false);
     }
 
@@ -34,12 +34,12 @@ public class PlayerTextUI : MonoBehaviour
     public int waitBetweenMessages = 200;
     IEnumerator push()
     {
-        while (image.color.a < 1)
+        while (images[0].color.a < 1)
         {
 
-            var temp = image.color;
+            var temp = images[0].color;
             temp.a += 0.01f;
-            image.color = temp;
+            foreach(Image i in images) i.color = temp;
             yield return new WaitForEndOfFrame();
         }
         while (helpMessages.Any())
@@ -57,12 +57,12 @@ public class PlayerTextUI : MonoBehaviour
                 textRender.text = "";
             }
 
-        while (image.color.a > 0)
+        while (images[0].color.a > 0)
         {
 
-            var temp = image.color;
+            var temp = images[0].color;
             temp.a -= 0.01f;
-            image.color = temp;
+            foreach(Image i in images) i.color = temp;
             yield return new WaitForEndOfFrame();
         }
 
