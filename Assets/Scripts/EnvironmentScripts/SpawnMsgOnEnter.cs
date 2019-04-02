@@ -4,23 +4,23 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-public class HelpTexts : MonoBehaviour
+public class SpawnMsgOnEnter : MonoBehaviour
 {
     [SerializeField]
     public List<string> helpMessages = new List<string>();
-
 
     public bool triggerOnce;
 
     void OnTriggerEnter(Collider other)
     {
-        
+
         if (other.CompareTag("Player"))
         {
             PlayerTextUI.singleton.helpMessages.AddRange(helpMessages);
             PlayerTextUI.singleton.startPush();
 
-            if (triggerOnce){
+            if (triggerOnce)
+            {
                 Destroy(this);
             }
         }

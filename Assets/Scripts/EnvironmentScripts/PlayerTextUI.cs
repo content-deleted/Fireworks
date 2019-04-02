@@ -23,8 +23,10 @@ public class PlayerTextUI : MonoBehaviour
         transform.parent.gameObject.SetActive(false);
     }
 
-    public void startPush(){
-        if(!gameObject.activeInHierarchy){
+    public void startPush()
+    {
+        if (!gameObject.activeInHierarchy)
+        {
             transform.parent.gameObject.SetActive(true);
             StartCoroutine(push());
         }
@@ -43,16 +45,16 @@ public class PlayerTextUI : MonoBehaviour
         while (helpMessages.Any())
             foreach (string text in helpMessages.ToList())
             {
+                helpMessages.Remove(text);
+
                 foreach (char c in text.ToCharArray())
                 {
                     textRender.text = textRender.text + c;
                     yield return new WaitForSeconds(textSpeed);
                 }
-                if (!text.Equals(helpMessages.Last()))
-                {
-                    yield return new WaitForSeconds(textSpeed * 50);
-                    textRender.text = "";
-                }
+
+                yield return new WaitForSeconds(textSpeed * 50);
+                textRender.text = "";
             }
 
         while (image.color.a > 0)
