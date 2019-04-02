@@ -4388,6 +4388,7 @@ GameObject:
   - component: {fileID: 1636557976602326502}
   - component: {fileID: 1636557976602326510}
   - component: {fileID: 1636557976602326511}
+  - component: {fileID: 1636557976602326512}
   m_Layer: 10
   m_Name: OurOVRrig
   m_TagString: Untagged
@@ -4425,6 +4426,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xMultiplier: 100
   yMultiplier: 100
+--- !u!114 &1636557976602326512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636557976602326509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9ce6ce3c0b954439e81476d66a993d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messages:
+  - subMessages:
+    - I think you can find the thing over there
+    - try that
+  - subMessages:
+    - Thing
+  timeTillNextMessage: 10
 --- !u!1 &1636557976662732926
 GameObject:
   m_ObjectHideFlags: 0
