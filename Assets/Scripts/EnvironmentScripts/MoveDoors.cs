@@ -20,17 +20,14 @@ public class MoveDoors : MonoBehaviour
     public bool open = false;
 
     void OnTriggerEnter(Collider c) {
-        Debug.Log("coll");
        if(c.tag == "Player" && !open){
            StartCoroutine(moveShelves(true));
            StartCoroutine(moveShelves(false));
        } 
     }
     IEnumerator moveShelves (bool right) {
-        Debug.Log("start");
         if(right){
             while(bookRight.transform.position.z < rightStart+max) {
-                Debug.Log("coright");
                 bookRight.transform.position += new Vector3(0,0,dt);
                 yield return new WaitForSeconds(0.000001f);
             }
