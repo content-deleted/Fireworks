@@ -17,6 +17,7 @@ public class LocationIndicator : MonoBehaviour
     public Vector3 rot;
     private float ticker;
     public float offsetSpeed;
+    public bool facePlayer;
     void LateUpdate()
     {
         ticker += offsetSpeed;
@@ -26,8 +27,9 @@ public class LocationIndicator : MonoBehaviour
             //put the arrow rotate around
             var dirToPlayer = transform.parent.InverseTransformDirection((playerRend.transform.position - transform.parent.position).normalized)/(10+(Mathf.Cos(ticker)+1) );
             transform.localPosition = new Vector3(dirToPlayer.x,dirToPlayer.y,0.25f);
-            transform.LookAt(transform.parent.TransformDirection(-dirToPlayer*2),transform.parent.forward );
-            transform.Rotate(rot,Space.Self);
+            //transform.LookAt(transform.parent.TransformDirection(-dirToPlayer*2),transform.parent.forward );
+            transform.LookAt(Camera.main.transform);
+            transform.Rotate(Vector3.up*180,Space.Self);
         }
         else showArrow = false;
 
