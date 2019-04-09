@@ -913,6 +913,7 @@ MonoBehaviour:
   minimumY: -30
   lookSpeed: 15
   angleToSnap: 2
+  grounded: 1
   hangTime: 1
   fallSpeedCap: 30
   fallCoefficent: 0.3
@@ -938,6 +939,7 @@ MonoBehaviour:
   PlayerControlModel: {fileID: 0}
   PointerModel: {fileID: 0}
   playerPointer: {fileID: 0}
+  switchLocked: 0
 --- !u!1 &5040607275817218304
 GameObject:
   m_ObjectHideFlags: 0

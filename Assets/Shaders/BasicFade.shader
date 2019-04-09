@@ -63,7 +63,7 @@
 
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
-                col = _MainColor;
+                col += _MainColor;
                 col *= clamp(NdotV*NdotV, 0, 1);
                 col.a = _Alpha;
                 // apply fog
