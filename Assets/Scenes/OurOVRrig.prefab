@@ -1166,6 +1166,23 @@ Transform:
   m_Father: {fileID: 3540997897895978119}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1287097894838543942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287097894299009637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f3b748d421f11149bc1b37b8feeb390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRend: {fileID: 0}
+  fadeSpeed: 0.05
+  rot: {x: 180, y: 0, z: 90}
+  offsetSpeed: 0.05
+  facePlayer: 0
 --- !u!1 &1287097894340885942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,22 +1527,6 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
---- !u!114 &1287097894838543942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287097894299009637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f3b748d421f11149bc1b37b8feeb390, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerRend: {fileID: 0}
-  fadeSpeed: 0.05
-  rot: {x: 180, y: 0, z: 90}
-  offsetSpeed: 0.05
 --- !u!1 &1287097895131688109
 GameObject:
   m_ObjectHideFlags: 0
@@ -3575,6 +3576,7 @@ MonoBehaviour:
   handModel: {fileID: 1287097895143649546}
   screenfade: {fileID: 8087412195044058196}
   creationMode: 0
+  heldObject: {fileID: 0}
   segments: 20
   lineMat: {fileID: 2100000, guid: b7ac3bb0d227a9846bc85f97459f7edd, type: 2}
 --- !u!1 &8429789942866853268
@@ -3918,11 +3920,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5276535376087799991}
     m_Modifications:
-    - target: {fileID: 2472228378882119424, guid: 5fe7a90a98e139b4dba65ad10e058cdf,
-        type: 3}
-      propertyPath: m_Name
-      value: PauseCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 2472228378882119427, guid: 5fe7a90a98e139b4dba65ad10e058cdf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4027,6 +4024,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2472228378882119424, guid: 5fe7a90a98e139b4dba65ad10e058cdf,
+        type: 3}
+      propertyPath: m_Name
+      value: PauseCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 2472228378882119452, guid: 5fe7a90a98e139b4dba65ad10e058cdf,
         type: 3}
