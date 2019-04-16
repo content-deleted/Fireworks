@@ -3480,6 +3480,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946864576}
   m_CullTransparentMesh: 0
+--- !u!1 &1954910312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4946381262565364830, guid: 130c290fc813294438436ee7724b59d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 568594109}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1954910314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954910312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88742731e7e5cb408bd7873792dd508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  altPosition: {x: -22, y: -6, z: 20}
 --- !u!1 &1964092311
 GameObject:
   m_ObjectHideFlags: 0
@@ -4089,6 +4108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d403e93c7eaf642b1c12502c4647fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  emptyListIfStarted: 1
   elements:
   - gameObject: {fileID: 597319375}
     activeOnStart: 1
@@ -4882,6 +4902,7 @@ GameObject:
   - component: {fileID: 1636557976602326512}
   - component: {fileID: 1636557976602326514}
   - component: {fileID: 1636557976602326513}
+  - component: {fileID: 1636557976602326515}
   m_Layer: 10
   m_Name: OurOVRrig
   m_TagString: Untagged
@@ -5042,6 +5063,19 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636557976602326509}
   m_Enabled: 1
+--- !u!114 &1636557976602326515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636557976602326509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88742731e7e5cb408bd7873792dd508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  altPosition: {x: -20, y: -1.33, z: 28}
 --- !u!1 &1636557976662732926
 GameObject:
   m_ObjectHideFlags: 0
@@ -5481,6 +5515,7 @@ GameObject:
   - component: {fileID: 1966665651174755772}
   - component: {fileID: 1358480519056230671}
   - component: {fileID: 1966665651172496253}
+  - component: {fileID: 1966665651172496256}
   m_Layer: 0
   m_Name: BookShelf Right
   m_TagString: Untagged
@@ -5513,6 +5548,7 @@ GameObject:
   - component: {fileID: 1966665651174755774}
   - component: {fileID: 1358480518688785086}
   - component: {fileID: 1966665651172496255}
+  - component: {fileID: 1966665651172496257}
   m_Layer: 0
   m_Name: BookShelf Left
   m_TagString: Untagged
@@ -5532,6 +5568,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d71719dcbf15bef4e8a87357d7ea5491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1966665651172496256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966665651172496252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88742731e7e5cb408bd7873792dd508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  altPosition: {x: -45.3, y: -11, z: 51.8}
+--- !u!114 &1966665651172496257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966665651172496254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88742731e7e5cb408bd7873792dd508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  altPosition: {x: -45.3, y: -11, z: 20.8}
 --- !u!4 &1966665651172855624
 Transform:
   m_ObjectHideFlags: 0

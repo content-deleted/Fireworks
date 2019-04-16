@@ -29,7 +29,7 @@ public class GameStateManager : MonoBehaviour
     }
     public List<chemical> chemicals = new List<chemical>();
     private GameObject dex;
-
+    public bool gameStarted = false;
     bool [] collected = new bool[11];
     public Sprite [] UI_Sprites;
     void Awake()

@@ -13,9 +13,12 @@ public class UIDisplay : MonoBehaviour
         public bool runImmidiate;
         public string GameObjectFromResources;
     }
-
+    public bool emptyListIfStarted = false;
     public static UIDisplay singleton;
     public void Awake() {
+        if(emptyListIfStarted) foreach(UIElement e in elements) {
+            if(e.gameObject.name != "CountdownTimer") GameObject.Destroy(e.gameObject);
+        }
         foreach(UIElement e in elements) e.gameObject.SetActive(false);
         singleton = this;
     }
