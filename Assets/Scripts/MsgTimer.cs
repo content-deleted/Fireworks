@@ -17,13 +17,11 @@ public class MsgTimer : MonoBehaviour
     public List<message> messages = new List<message> ();
     public float timeTillNextMessage = 10;
     public static float timer;
-
     public void Start() => timer = timeTillNextMessage;
 
     void Update() {
         timer-=Time.deltaTime;
         if(timer <= 0){
-            Debug.Log("Pushed Msg");
             timer = timeTillNextMessage;
             var ourMessage = getNewMessage();
             PlayerTextUI.singleton.helpMessages.AddRange(ourMessage);
