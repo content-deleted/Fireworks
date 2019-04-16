@@ -53,13 +53,21 @@ MonoBehaviour:
   - elements: 00000000030000000a0000000a0000000a000000
     chemSprite: {fileID: 21300010, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
     crafted: 0
+  - elements: 0100000007000000
+    chemSprite: {fileID: 21300030, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
+    crafted: 0
+  - elements: 0400000007000000
+    chemSprite: {fileID: 21300028, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
+    crafted: 0
   UI_Sprites:
   - {fileID: 21300000, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
   - {fileID: 21300002, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
   - {fileID: 21300004, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
   - {fileID: 21300006, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
-  - {fileID: 21300006, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
-  - {fileID: 21300006, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
-  - {fileID: 21300006, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
+  - {fileID: 21300016, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
+  - {fileID: 21300018, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
+  - {fileID: 21300020, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
   - {fileID: 21300014, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
-  - {fileID: 21300006, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
+  - {fileID: 21300022, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
+  - {fileID: 21300024, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
+  - {fileID: 21300026, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
