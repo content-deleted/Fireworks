@@ -13,7 +13,7 @@ public class LevelEntry : MonoBehaviour
         if(other.tag == "Player"){
             timer++;
             Debug.Log(timer);
-            if(timer>200)
+            if(timer>160)
                 screenfade.FadeOut(() => 
                     SceneManager.LoadScene(sceneName,LoadSceneMode.Single)
                 );

@@ -16,7 +16,11 @@ public class ShowUI : MonoBehaviour
 
     public int FRAMESTOWAIT = 300;
 
-    void Start() => animator = PlayerState.singleton.GetComponent<Animator>();
+
+    void Start() {
+        if(GameStateManager.singleton.hasCollected(element) ) GameObject.Destroy(gameObject);
+        animator = PlayerState.singleton.GetComponent<Animator>();
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

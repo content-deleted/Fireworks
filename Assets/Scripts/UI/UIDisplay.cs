@@ -16,8 +16,11 @@ public class UIDisplay : MonoBehaviour
     public bool emptyListIfStarted = false;
     public static UIDisplay singleton;
     public void Awake() {
-        if(emptyListIfStarted) foreach(UIElement e in elements) {
-            if(e.gameObject.name != "CountdownTimer") GameObject.Destroy(e.gameObject);
+        if(emptyListIfStarted && GameStateManager.singleton?.gameStarted == true) {
+            foreach(UIElement e in elements) 
+                if(e.gameObject.name != "CountdownTimer") GameObject.Destroy(e.gameObject);
+            StartFromBeginning = false;
+            PressAnyButton.SetActive(false);
         }
         foreach(UIElement e in elements) e.gameObject.SetActive(false);
         singleton = this;
