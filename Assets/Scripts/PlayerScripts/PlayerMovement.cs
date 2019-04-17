@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 ledgeMemory;
     private Animator animator;
 
+    public AudioClip jumpClip;
+    AudioSource audioSource;
+
     #region Jump Parm
     [SerializeField]
     private bool grounded = true;
@@ -45,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         playerCollider = GetComponent<Collider>();
+        audioSource = GetComponent<AudioSource>();
+        jumpClip = Resources.Load("jumpClip") as AudioClip;
     }
 
     private void Update()
@@ -131,6 +136,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector3(rb.velocity.x, jumpStrength, rb.velocity.z);
                 grounded = false;
                 jumpHeld = true;
+                audioSource.PlayOneShot(jumpClip, 0.7F);
             }
         }
         else {
