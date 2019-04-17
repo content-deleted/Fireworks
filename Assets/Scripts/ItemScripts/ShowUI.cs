@@ -4,11 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+[RequireComponent(typeof(AudioSource))]
 public class ShowUI : MonoBehaviour
 {
     [SerializeField] 
     private GameStateManager.elements element;
     private GameObject objClone;
+
+    public AudioClip itemPickUpClip;
+    AudioSource audioSource;
 
     Animator animator;
 
@@ -20,6 +24,8 @@ public class ShowUI : MonoBehaviour
     void Start() {
         if(GameStateManager.singleton.hasCollected(element) ) GameObject.Destroy(gameObject);
         animator = PlayerState.singleton.GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+        itemPickUpClip = Resources.Load("itemPickUpClip") as AudioClip;
     }
     void OnTriggerEnter(Collider other)
     {
@@ -33,6 +39,8 @@ public class ShowUI : MonoBehaviour
             StartCoroutine(endPickup());
 
             GameStateManager.singleton.collect(element);
+
+            audioSource.PlayOneShot(itemPickUpClip, 0.7F);
         }
     }
 
