@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         playerCollider = GetComponent<Collider>();
         audioSource = GetComponent<AudioSource>();
-        jumpClip = Resources.Load("jumpClip") as AudioClip;
+        jumpClip = Resources.Load("jumpClip2") as AudioClip;
     }
 
     private void Update()
