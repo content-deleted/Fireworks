@@ -38,7 +38,7 @@ public class PlayerTextUI : MonoBehaviour
         {
 
             var temp = images[0].color;
-            temp.a += 0.01f;
+            temp.a += 0.03f;
             foreach(Image i in images) i.color = temp;
             yield return new WaitForEndOfFrame();
         }
@@ -61,7 +61,7 @@ public class PlayerTextUI : MonoBehaviour
         {
 
             var temp = images[0].color;
-            temp.a -= 0.01f;
+            temp.a -= 0.03f;
             foreach(Image i in images) i.color = temp;
             yield return new WaitForEndOfFrame();
         }
