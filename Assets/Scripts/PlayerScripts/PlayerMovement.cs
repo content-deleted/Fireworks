@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Collider playerCollider;
     private Rigidbody rb;
     private Vector3 ledgeMemory;
-    private Animator animator;
+    public Animator animator;
 
     public AudioClip jumpClip;
     AudioSource audioSource;
