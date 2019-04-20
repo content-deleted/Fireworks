@@ -7,12 +7,18 @@ public class FireworkMaterial : MonoBehaviour
     public Transform spawnLocation;
     public GameStateManager.elements element;
     private Rigidbody rigidbody;
+
+    public AudioClip poof;
+    AudioSource audioSource;
     void Start()
     {
         // disable if we dont have this element
         if(!GameStateManager.singleton.hasCollected(element)) gameObject.SetActive(false);
 
         rigidbody = GetComponent<Rigidbody>();
+
+        audioSource = GetComponent<AudioSource>();
+        poof = Resources.Load("poof") as AudioClip;
     }
 
     private bool inArea = true;
@@ -43,6 +49,7 @@ public class FireworkMaterial : MonoBehaviour
 
     void OnTriggerExit (Collider other) {
         if(other.tag == "TableArea") inArea = false;
+        audioSource.PlayOneShot(poof, 0.7F);
     }
 
     public void Respawn() {

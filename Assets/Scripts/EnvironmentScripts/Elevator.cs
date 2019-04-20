@@ -18,7 +18,8 @@ public class Elevator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-         if(other.tag == "Player") audioSource.PlayOneShot(elevatorClip, 0.7F);
+         if(other.tag == "Player") 
+         audioSource.PlayOneShot(elevatorClip, 0.7F);
     }
 
     private void OnTriggerStay(Collider other)

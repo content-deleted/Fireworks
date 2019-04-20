@@ -11,7 +11,7 @@ public class ShowUI : MonoBehaviour
     private GameStateManager.elements element;
     private GameObject objClone;
 
-    public AudioClip itemPickUpClip;
+    public AudioClip itemObtain;
     AudioSource audioSource;
 
     Animator animator;
@@ -25,7 +25,7 @@ public class ShowUI : MonoBehaviour
         if(GameStateManager.singleton.hasCollected(element) ) GameObject.Destroy(gameObject);
         animator = PlayerState.singleton.GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        itemPickUpClip = Resources.Load("itemPickUpClip") as AudioClip;
+        itemObtain = Resources.Load("itemObtain") as AudioClip;
     }
     void OnTriggerEnter(Collider other)
     {
@@ -39,8 +39,8 @@ public class ShowUI : MonoBehaviour
             StartCoroutine(endPickup());
 
             GameStateManager.singleton.collect(element);
-
-            audioSource.PlayOneShot(itemPickUpClip, 0.7F);
+            gameObject.AddComponent<AudioSource>();
+            audioSource.PlayOneShot(itemObtain, 0.7F);
         }
     }
 
