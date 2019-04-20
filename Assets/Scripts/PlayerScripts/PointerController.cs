@@ -24,6 +24,8 @@ public class PointerController : MonoBehaviour
     private float prevRotation; 
     private bool couldRotate;
     private bool redOrBlue;
+    public AudioClip fireworkMachine;
+    AudioSource audioSource;
     void Awake() {
         line = new GameObject();
         line.AddComponent<LineRenderer>();
@@ -32,6 +34,9 @@ public class PointerController : MonoBehaviour
         line.AddComponent<LineBendController>();
         lineBend = line.GetComponent<LineBendController>();
         lineBend.holdPoint = grabPoint;
+
+        audioSource = GetComponent<AudioSource>();
+        fireworkMachine = Resources.Load("fireworkMachine") as AudioClip;
 
         lr.material = lineMat;//new Material(Shader.Find("Custom/LineBend"));
         lr.startWidth = 0.05f;
@@ -50,6 +55,7 @@ public class PointerController : MonoBehaviour
     const int ignoreMask = ~(1 << 12);
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.P)) MoveToFinalScene();
         if(PlayerState.singleton.pointerMode && PauseManager.singleton?.Paused!=true) { 
             RaycastHit hit;
 
@@ -79,8 +85,7 @@ public class PointerController : MonoBehaviour
                         prevRotation = handModel.transform.rotation.eulerAngles.z;
                     }
                     if(creationMode && r.gameObject.tag == "Player") {
-                        // Make a popup
-                        screenfade.FadeOut( () => SceneManager.LoadScene("FireworkScene") );
+                        MoveToFinalScene();
                     }
                 }
                 // update the point light
@@ -145,5 +150,10 @@ public class PointerController : MonoBehaviour
         for(int i = 0; i < segments; i++) {
             lr.SetPosition(i, Vector3.Lerp(start, end, (float)i / (float) segments));
         }
+    }
+     void MoveToFinalScene () {
+        //screenfade.FadeOut( () => SceneManager.LoadScene("FireworkScene") );
+        PlayerState.singleton.GetComponent<Animator>().SetBool("Push", true);
+        audioSource.PlayOneShot(fireworkMachine, 0.7F);
     }
 }
