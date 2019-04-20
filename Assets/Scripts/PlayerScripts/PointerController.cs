@@ -152,7 +152,8 @@ public class PointerController : MonoBehaviour
         }
     }
      void MoveToFinalScene () {
-        //screenfade.FadeOut( () => SceneManager.LoadScene("FireworkScene") );
+        screenfade.fadeTime = 7;
+        screenfade.FadeOut( () => SceneManager.LoadScene("FireworkScene") );
         PlayerState.singleton.GetComponent<Animator>().SetBool("Push", true);
         audioSource.PlayOneShot(fireworkMachine, 0.7F);
     }
