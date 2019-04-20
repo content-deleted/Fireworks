@@ -1,8 +1,8 @@
-﻿Shader "Unlit/BasicFade"
+﻿Shader "Unlit/BasicFadeTexture"
 {
     Properties
     {
-        _MainColor ("Color", Color) = (1,1,1,1)
+        _MainTex ("Texture", 2D) = "white" {}
         _Alpha ("Alpha", Range (0, 1)) = 1
     }
     SubShader
@@ -39,6 +39,7 @@
                 float3 viewDir : TEXCOORD2; 
             };
 
+            sampler2D _MainTex;
             float4 _MainTex_ST;
             float4 _MainColor;
             float _Alpha;
@@ -59,10 +60,10 @@
                 float3 viewNormal = i.normal;
                 float NdotV = dot(viewNormal, i.viewDir);
 
-                float4 col = _MainColor;
-                float a = _MainColor.a;
-                col *= clamp(NdotV*NdotV, 0.5, 1);
-                col.a = a;
+                // sample the texture
+                fixed4 col = tex2D(_MainTex, i.uv);
+                //col = _MainColor;
+                //col *= clamp(NdotV*NdotV, 0, 1);
                 col.a *= _Alpha;
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
