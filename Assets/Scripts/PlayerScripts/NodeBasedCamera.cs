@@ -12,7 +12,11 @@ public class NodeBasedCamera : MonoBehaviour
 
     public void LateUpdate() {
         if(currentNode != null) {
-            rb.velocity = (currentNode.position - transform.position) / 10;
+            if(Vector3.Distance(currentNode.position, transform.position) > 0.05f)
+                rb.velocity =  (currentNode.position - transform.position).normalized + (currentNode.position - transform.position) / 8;
+            else
+                rb.velocity = Vector3.zero;
         }
+
     }
 }
