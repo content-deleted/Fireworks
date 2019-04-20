@@ -39,7 +39,7 @@ public class ShowUI : MonoBehaviour
             StartCoroutine(endPickup());
 
             GameStateManager.singleton.collect(element);
-
+            gameObject.AddComponent<AudioSource>();
             audioSource.PlayOneShot(itemPickUpClip, 0.7F);
         }
     }
