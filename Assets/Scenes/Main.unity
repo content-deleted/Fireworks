@@ -2992,6 +2992,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3232022218615311805, guid: 4a6d9c6b34804964a8cd312f7c67fdb7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232022218615311805, guid: 4a6d9c6b34804964a8cd312f7c67fdb7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232022217230405585, guid: 4a6d9c6b34804964a8cd312f7c67fdb7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232022217805220025, guid: 4a6d9c6b34804964a8cd312f7c67fdb7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232022218155921720, guid: 4a6d9c6b34804964a8cd312f7c67fdb7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3232022218155921721, guid: 4a6d9c6b34804964a8cd312f7c67fdb7,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -4281,7 +4306,7 @@ GameObject:
   - component: {fileID: 1224624665}
   - component: {fileID: 1224624667}
   - component: {fileID: 1224624666}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PlantNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4748,7 +4773,7 @@ GameObject:
   - component: {fileID: 1349778126}
   - component: {fileID: 1349778128}
   - component: {fileID: 1349778127}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CenterNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5724,7 +5749,7 @@ GameObject:
   - component: {fileID: 1854867059}
   - component: {fileID: 1854867061}
   - component: {fileID: 1854867060}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BoxNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5787,7 +5812,7 @@ GameObject:
   - component: {fileID: 1914629876}
   - component: {fileID: 1914629878}
   - component: {fileID: 1914629877}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TopCabNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6250,7 +6275,7 @@ GameObject:
   - component: {fileID: 2095388321}
   - component: {fileID: 2095388323}
   - component: {fileID: 2095388322}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CouchNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6282,8 +6307,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30.939177, y: 28.956238, z: 32.6912}
-  m_Center: {x: -0.5547863, y: -3.2154648, z: 12.561768}
+  m_Size: {x: 30.939177, y: 28.956238, z: 29.903973}
+  m_Center: {x: -0.5547863, y: -3.2154648, z: 13.955374}
 --- !u!114 &2095388323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6417,7 +6442,7 @@ GameObject:
   - component: {fileID: 2132557598}
   - component: {fileID: 2132557600}
   - component: {fileID: 2132557599}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BottomCabNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
