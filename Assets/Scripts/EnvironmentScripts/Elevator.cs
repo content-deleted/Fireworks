@@ -15,13 +15,20 @@ public class Elevator : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         elevatorClip = Resources.Load("elevatorClip") as AudioClip;
     }
-    private void OnTriggerStay()
+
+    private void OnTriggerEnter()
     {
-        moveElevator.transform.position += Vector3.up * Time.deltaTime;
         audioSource.PlayOneShot(elevatorClip, 0.7F);
     }
 
-    void Update()
+    private void OnTriggerStay()
+    {
+        moveElevator.transform.position += Vector3.up * Time.deltaTime;
+        moveDown = false;
+        Debug.Log("Test");
+    }
+
+    void LateUpdate()
     {
         if (moveDown)
         {
@@ -37,5 +44,6 @@ public class Elevator : MonoBehaviour
     {
         moveDown = true;
         moveElevator.transform.position += Vector3.down * Time.deltaTime;
+        audioSource.Stop();
     }
 }
