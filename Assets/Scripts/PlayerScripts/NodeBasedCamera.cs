@@ -12,7 +12,7 @@ public class NodeBasedCamera : MonoBehaviour
 
     public void LateUpdate() {
         if(currentNode != null) {
-            rb.AddForce((currentNode.position - transform.position) / 100);
+            rb.velocity = (currentNode.position - transform.position) / 10;
         }
     }
 }
