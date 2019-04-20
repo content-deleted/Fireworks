@@ -13,7 +13,11 @@ public class FireworkMaterial : MonoBehaviour
     void Start()
     {
         // disable if we dont have this element
-        if(!GameStateManager.singleton.hasCollected(element)) gameObject.SetActive(false);
+        if(!GameStateManager.singleton.hasCollected(element)) {
+            var label = GameObject.Find($"UI_Display_{GameStateManager.getElementName(element)}");
+            gameObject.SetActive(false);
+            label.SetActive(false);
+        }
 
         rigidbody = GetComponent<Rigidbody>();
 
