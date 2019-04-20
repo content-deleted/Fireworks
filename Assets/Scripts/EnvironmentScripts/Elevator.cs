@@ -16,16 +16,17 @@ public class Elevator : MonoBehaviour
         elevatorClip = Resources.Load("elevatorClip") as AudioClip;
     }
 
-    private void OnTriggerEnter()
+    private void OnTriggerEnter(Collider other)
     {
-        audioSource.PlayOneShot(elevatorClip, 0.7F);
+         if(other.tag == "Player") audioSource.PlayOneShot(elevatorClip, 0.7F);
     }
 
-    private void OnTriggerStay()
+    private void OnTriggerStay(Collider other)
     {
-        moveElevator.transform.position += Vector3.up * Time.deltaTime;
-        moveDown = false;
-        Debug.Log("Test");
+        if(other.tag == "Player") {
+            moveElevator.transform.position += Vector3.up * Time.deltaTime;
+            moveDown = false;
+        }
     }
 
     void LateUpdate()
@@ -40,10 +41,12 @@ public class Elevator : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit()
+    private void OnTriggerExit(Collider other)
     {
-        moveDown = true;
-        moveElevator.transform.position += Vector3.down * Time.deltaTime;
-        audioSource.Stop();
+        if(other.tag == "Player") {
+            moveDown = true;
+            moveElevator.transform.position += Vector3.down * Time.deltaTime;
+            audioSource.Stop();
+        }
     }
 }
