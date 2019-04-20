@@ -2550,6 +2550,11 @@ PrefabInstance:
       propertyPath: switchLocked
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8445435350288879975, guid: 130c290fc813294438436ee7724b59d6,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 226368891216401029, guid: 130c290fc813294438436ee7724b59d6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 130c290fc813294438436ee7724b59d6, type: 3}
