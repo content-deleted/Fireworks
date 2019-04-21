@@ -29,6 +29,7 @@ public class FireworksLaunchController : MonoBehaviour
                 f.firework.SetActive(GameStateManager.singleton.chemicals.Where((x,i)=> f.chemNumbers.Contains(i)).Select(c => c.crafted).Aggregate((a,b) => a&&b));
             }
             StartCoroutine(movebutton());
+            StartCoroutine(playSound());
         }
     }
 
@@ -38,4 +39,12 @@ public class FireworksLaunchController : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
     }
+
+    IEnumerator playSound()
+     {
+         GetComponent<AudioSource>().clip = fireworksLaunch;
+         GetComponent<AudioSource>().Play();
+         yield return new WaitForSeconds(fireworksLaunch.length);
+         GetComponent<AudioSource>().loop = true;
+     }
 }
