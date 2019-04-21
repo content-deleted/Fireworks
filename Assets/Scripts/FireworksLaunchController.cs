@@ -12,9 +12,9 @@ public class FireworksLaunchController : MonoBehaviour
     }
     public List<fireworkMapping> mappings = new List<fireworkMapping>();
     private bool launched = false;
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider col)
     {
-        if(!launched){
+        if(!launched && col.transform.tag == "Player") {
             launched = true;
             foreach(var f in mappings) {
                 f.firework.SetActive(GameStateManager.singleton.chemicals.Where((x,i)=> f.chemNumbers.Contains(i)).Select(c => c.crafted).Aggregate((a,b) => a&&b));
