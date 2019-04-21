@@ -9,13 +9,22 @@ public class FireworksLaunchController : MonoBehaviour
     public class fireworkMapping {
         public List<int> chemNumbers;
         public GameObject firework;
+        
     }
+    public AudioClip fireworksLaunch;
+    AudioSource audioSource;
     public List<fireworkMapping> mappings = new List<fireworkMapping>();
     private bool launched = false;
+    void Start() {
+        audioSource = GetComponent<AudioSource>();
+        fireworksLaunch = Resources.Load("fireworksLaunch") as AudioClip;
+    }
+
     void OnTriggerEnter(Collider col)
     {
         if(!launched && col.transform.tag == "Player") {
             launched = true;
+            audioSource.PlayOneShot(fireworksLaunch, 0.7F);
             foreach(var f in mappings) {
                 f.firework.SetActive(GameStateManager.singleton.chemicals.Where((x,i)=> f.chemNumbers.Contains(i)).Select(c => c.crafted).Aggregate((a,b) => a&&b));
             }
