@@ -1326,7 +1326,7 @@ PrefabInstance:
     - target: {fileID: 7344017983018165560, guid: 21e51b02a89eb084db6bef713861dadb,
         type: 3}
       propertyPath: chemicals.Array.data[0].crafted
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7344017983018165560, guid: 21e51b02a89eb084db6bef713861dadb,
         type: 3}

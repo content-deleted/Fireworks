@@ -1876,6 +1876,11 @@ PrefabInstance:
       propertyPath: switchLocked
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 668170482028924208, guid: 130c290fc813294438436ee7724b59d6,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.07
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 226368891216401029, guid: 130c290fc813294438436ee7724b59d6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 130c290fc813294438436ee7724b59d6, type: 3}
