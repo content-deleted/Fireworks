@@ -43,6 +43,7 @@ public class ElementCombine : MonoBehaviour
             combined = new List<elements>();
             // show feedback
             showFeedback(Resources.Load<Sprite>("X"));
+            AudioManager.singleton.audioSource.PlayOneShot(AudioManager.singleton.wrong, 0.7F);
         }
 
         // update feedback 
@@ -52,6 +53,7 @@ public class ElementCombine : MonoBehaviour
     public static void craftChemical(chemical chem){
         chem.crafted = true;
         showFeedback(chem.chemSprite);
+        AudioManager.singleton.audioSource.PlayOneShot(AudioManager.singleton.correct, 0.7F);
 
         // clear combined
         combined = new List<elements>();
