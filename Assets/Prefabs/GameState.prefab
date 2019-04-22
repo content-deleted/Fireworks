@@ -60,6 +60,8 @@ MonoBehaviour:
   - elements: 0400000007000000
     chemSprite: {fileID: 21300028, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
     crafted: 0
+  purpleCrafted: 0
+  purpleSprite: {fileID: 21300032, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
   gameStarted: 0
   UI_Sprites:
   - {fileID: 21300000, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}

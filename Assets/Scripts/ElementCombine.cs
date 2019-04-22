@@ -57,6 +57,14 @@ public class ElementCombine : MonoBehaviour
 
         // clear combined
         combined = new List<elements>();
+
+        if(!GameStateManager.singleton.purpleCrafted 
+        && GameStateManager.singleton.chemicals[2].crafted 
+        && GameStateManager.singleton.chemicals[3].crafted)  {
+            // craft purple 
+            GameStateManager.singleton.purpleCrafted = true;
+            GameStateManager.singleton.StartCoroutine(GameStateManager.singleton.displayPurple(displayTime));
+        }
     }
 
     /// <summary>

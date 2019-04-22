@@ -28,6 +28,8 @@ public class GameStateManager : MonoBehaviour
         public bool crafted = false;
     }
     public List<chemical> chemicals = new List<chemical>();
+    public bool purpleCrafted = false;
+    public Sprite purpleSprite;
     private GameObject dex;
     public bool gameStarted = false;
     bool [] collected = new bool[11];
@@ -70,6 +72,11 @@ public class GameStateManager : MonoBehaviour
         var g = dex.transform.Find($"Entry ({entry})");
         g.GetComponent<SpriteRenderer>().sprite = UI_Sprites[entry];
         g.localScale = Vector3.one * 4;
+    }
+
+    public IEnumerator displayPurple(float waitTime) {
+        yield return new WaitForSeconds(waitTime);
+        ElementCombine.showFeedback(purpleSprite);
     }
 
     // Just incase, I thought about abstracting the gamestate based on scene but its probably bad 
