@@ -37,11 +37,30 @@ public class FireworkMaterial : MonoBehaviour
                 ElementCombine.addElement(element);
                 Respawn();
                 break;
+            case "Adjuster":
+                adjust(other);
+                break;
         }
+    }
+
+    public void adjust(Collider other) {
+        Vector3 offset = 0.1f * PointerController.singleton.transform.forward;
+        if(transform.position.z < other.transform.position.z) PointerController.singleton.grabPoint.transform.position += offset;
+        else PointerController.singleton.grabPoint.transform.localPosition -= offset;
     }
 
     void OnTriggerStay (Collider other) {
         if(other.tag == "TableArea") inArea = true;
+        switch(other.tag){
+            case "TableArea":
+                inArea = true;
+                break;
+            case "Burner":
+                break;
+            case "Adjuster":
+                adjust(other);
+                break;
+        }
     }
 
     void OnCollisionEnter(Collision c) {

@@ -58,13 +58,21 @@ public class ElementCombine : MonoBehaviour
         // clear combined
         combined = new List<elements>();
 
+        // check if this was enough to make red and purple
         if(!GameStateManager.singleton.purpleCrafted 
         && GameStateManager.singleton.chemicals[2].crafted 
         && GameStateManager.singleton.chemicals[3].crafted)  {
             // craft purple 
             GameStateManager.singleton.purpleCrafted = true;
-            GameStateManager.singleton.StartCoroutine(GameStateManager.singleton.displayPurple(displayTime));
+            ElementCombine.showFeedback(GameStateManager.singleton.purpleSprite);
+            // explanation
+            PlayerTextUI.singleton.helpMessages.Add("Purple is created with a combination of red and blue light!");
+            PlayerTextUI.singleton.helpMessages.Add("By mixing your strontium and copper componds you can have purple as well.");
+            PlayerTextUI.singleton.startPush();
         }
+
+        // defer to our next frame to check for all chemicals crafted
+        GameStateManager.singleton.StartCoroutine(GameStateManager.singleton.checkForAllChemicals());
     }
 
     /// <summary>
@@ -92,12 +100,13 @@ public class ElementCombine : MonoBehaviour
     /// Creates a new instance of the UI display 
     /// </summary>
     /// <param name="Sprite to set"></param>
-    public static void showFeedback(Sprite sprite){
-        var objClone = Instantiate(Resources.Load("UI_Display") as GameObject, t.position + Vector3.up * 4, Quaternion.identity);
+    public static void showFeedback(Sprite sprite, float height = 4){
+        var objClone = Instantiate(Resources.Load("UI_Display") as GameObject, t.position + Vector3.up * height, Quaternion.identity);
         objClone.GetComponent<SpriteRenderer>().sprite = sprite;
         Destroy(objClone, displayTime);
     }
     
     private static Transform t;
     public void Start() => t = transform;
+    
 }

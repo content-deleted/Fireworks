@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameStateManager : MonoBehaviour
 {
     public static GameStateManager singleton;
+    public bool debug = false;
     public enum elements {
         Sr,
         Cu,
@@ -29,6 +30,7 @@ public class GameStateManager : MonoBehaviour
     }
     public List<chemical> chemicals = new List<chemical>();
     public bool purpleCrafted = false;
+    public bool canMoveOn = true;
     public Sprite purpleSprite;
     private GameObject dex;
     public bool gameStarted = false;
@@ -45,6 +47,8 @@ public class GameStateManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         var Sprites = Resources.LoadAll<Sprite>($"UI_Sprite_");
 
+        // debug for having all elements collected
+        if(debug) for(int i = 0; i <11; i++) collected[i] = true;
     }
 
     void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
@@ -74,9 +78,31 @@ public class GameStateManager : MonoBehaviour
         g.localScale = Vector3.one * 4;
     }
 
-    public IEnumerator displayPurple(float waitTime) {
-        yield return new WaitForSeconds(waitTime);
-        ElementCombine.showFeedback(purpleSprite);
+    
+    // Check if this was the last one
+    public IEnumerator checkForAllChemicals () {
+        yield return new WaitForEndOfFrame();
+        var uncraftedChem = GameStateManager.singleton.chemicals.Where(x => !x.crafted);
+        if(!uncraftedChem.Any()) {
+            canMoveOn = true;
+            PlayerState.singleton.transform.Find("Arrow").gameObject.SetActive(true);
+
+            PlayerTextUI.singleton.helpMessages.Add("Congradulations! Looks like you're finished making all the fireworks!");
+            PlayerTextUI.singleton.helpMessages.Add("Click on me when you're ready and I'll prepare them for launch.");
+            PlayerTextUI.singleton.startPush();
+        } else {
+            var chemicalsLeft = uncraftedChem.Where(c => !c.elements.Where(hasCollected).Any()).Any();
+            if(!chemicalsLeft) {
+                canMoveOn = true;
+                PlayerState.singleton.transform.Find("Arrow").gameObject.SetActive(true);
+                
+                PlayerTextUI.singleton.helpMessages.Add("Looks like thats all the types of fireworks you can make with elements you found.");
+                PlayerTextUI.singleton.helpMessages.Add("You can try and find more next time but for now lets enjoy these colors!");
+                PlayerTextUI.singleton.helpMessages.Add("Click on me when you're ready and I'll prepare them for launch.");
+                PlayerTextUI.singleton.startPush();
+
+            }
+        }
     }
 
     // Just incase, I thought about abstracting the gamestate based on scene but its probably bad 
