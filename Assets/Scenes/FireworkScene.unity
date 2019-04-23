@@ -285,6 +285,7 @@ MonoBehaviour:
   speed: 1
   axis: {x: 1000, y: 1000, z: 1000}
   offset: {x: 38163, y: 38163, z: 38163}
+  UseOriginalScale: 0
 --- !u!1001 &118086632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -786,48 +787,8 @@ PrefabInstance:
       objectReference: {fileID: 7824648929284410743}
     - target: {fileID: 4946381262565364831, guid: 130c290fc813294438436ee7724b59d6,
         type: 3}
-      propertyPath: runSpeed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946381262565364831, guid: 130c290fc813294438436ee7724b59d6,
-        type: 3}
-      propertyPath: frictionCoefficient
-      value: 1.075
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946381262565364831, guid: 130c290fc813294438436ee7724b59d6,
-        type: 3}
-      propertyPath: moveSpeedCap
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946381262565364831, guid: 130c290fc813294438436ee7724b59d6,
-        type: 3}
-      propertyPath: fallCoefficent
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946381262565364831, guid: 130c290fc813294438436ee7724b59d6,
-        type: 3}
-      propertyPath: jumpStrength
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946381262565364831, guid: 130c290fc813294438436ee7724b59d6,
-        type: 3}
       propertyPath: turnThresh
       value: 0.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946381262565364831, guid: 130c290fc813294438436ee7724b59d6,
-        type: 3}
-      propertyPath: jumpControl
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946381262565364831, guid: 130c290fc813294438436ee7724b59d6,
-        type: 3}
-      propertyPath: fallSpeedCap
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4946381262565364831, guid: 130c290fc813294438436ee7724b59d6,
-        type: 3}
-      propertyPath: hangTime
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4946381262565364824, guid: 130c290fc813294438436ee7724b59d6,
         type: 3}
@@ -1756,6 +1717,7 @@ MonoBehaviour:
   speed: 2.5
   axis: {x: 50000, y: 50000, z: 50000}
   offset: {x: 510000, y: 510000, z: 510000}
+  UseOriginalScale: 0
 --- !u!1001 &1536531621
 PrefabInstance:
   m_ObjectHideFlags: 0

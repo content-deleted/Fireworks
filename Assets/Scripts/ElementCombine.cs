@@ -66,7 +66,7 @@ public class ElementCombine : MonoBehaviour
             GameStateManager.singleton.purpleCrafted = true;
             var purple = ElementCombine.showFeedback(GameStateManager.singleton.purpleSprite, 8);
             purple.GetComponent<Billboard>().enabled = false;
-            purple.transform.LookAt(Vector3.forward);
+            purple.transform.LookAt(purple.transform.position + Vector3.forward);
             // explanation
             PlayerTextUI.singleton.helpMessages.Add("Purple is created with a combination of red and blue light!");
             PlayerTextUI.singleton.helpMessages.Add("By mixing your strontium and copper componds you can have purple as well.");
