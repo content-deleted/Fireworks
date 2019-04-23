@@ -3230,6 +3230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1942000198}
   - component: {fileID: 1942000199}
+  - component: {fileID: 1942000200}
   m_Layer: 0
   m_Name: Thank you message
   m_TagString: Untagged
@@ -3264,9 +3265,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   helpMessages:
-  - This is the best spot for viewing the fireworks.
-  - Thank you for playing!
+  - This balcony has the best view of the fireworks.
+  - Thank you for playing our game!
   triggerOnce: 1
+--- !u!65 &1942000200
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942000197}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.9486046, y: 7.368141, z: 5.8944397}
+  m_Center: {x: 0.84537506, y: -0.40476227, z: 2.4472198}
 --- !u!1001 &2140517294
 PrefabInstance:
   m_ObjectHideFlags: 0

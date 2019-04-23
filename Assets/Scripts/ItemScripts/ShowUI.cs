@@ -46,10 +46,11 @@ public class ShowUI : MonoBehaviour
 
     IEnumerator endPickup()
     {
-        for (int i = 0; i <= FRAMESTOWAIT; i++)
+        for (int i = 0; i < FRAMESTOWAIT*10; i++)
         {
-            yield return new WaitForSeconds(3);
-            if(skip) break;
+            yield return new WaitForEndOfFrame();
+            transform.position = new Vector3(transform.position.x, transform.position.y +0.005f, transform.position.z);
+            transform.localScale *= 0.995f;
         }
 
         animator.SetTrigger("PickDown");
