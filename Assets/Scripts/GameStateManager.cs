@@ -72,6 +72,8 @@ public class GameStateManager : MonoBehaviour
         replaceDexEntry((int)e);
     }
 
+    public bool allElementsCollected () => !collected.Where(c=>!c).Any();
+
     private void replaceDexEntry(int entry) {
         var g = dex.transform.Find($"Entry ({entry})");
         g.GetComponent<SpriteRenderer>().sprite = UI_Sprites[entry];

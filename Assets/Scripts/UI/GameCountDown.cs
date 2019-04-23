@@ -19,7 +19,14 @@ public class GameCountDown : MonoBehaviour
             var t = ((minutesStart * 60) - counter);
             text.text =  $"{(int)(t/60)}:{((int)(t%60)).ToString("D2")}";
             GameStateManager.singleton.gameStarted = true;
-            if(t<=0) EndGame();
+            if(t<=0) {
+                // ran out of time
+                EndGame();
+            }
+            else if(GameStateManager.singleton.allElementsCollected()){
+                // all elements collected 
+                EndGame();
+            }
         }
     }
 
