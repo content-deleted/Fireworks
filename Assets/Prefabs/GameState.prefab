@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae0f6b6b5b601040af67d665c43b166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   chemicals:
   - elements: 020000000700000007000000
     chemSprite: {fileID: 21300008, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
@@ -57,10 +58,11 @@ MonoBehaviour:
   - elements: 0100000007000000
     chemSprite: {fileID: 21300030, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
     crafted: 0
-  - elements: 0400000007000000
+  - elements: 04000000090000000a0000000a0000000a000000
     chemSprite: {fileID: 21300028, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
     crafted: 0
   purpleCrafted: 0
+  canMoveOn: 1
   purpleSprite: {fileID: 21300032, guid: 7c5fd38f23afa3c4e8838d992ae91389, type: 3}
   gameStarted: 0
   UI_Sprites:

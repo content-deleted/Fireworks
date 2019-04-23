@@ -6,17 +6,24 @@ ModelImporter:
     100000: Room and Content.000
     100002: Room and Content.002
     100004: //RootNode
+    100006: Room and Content.001
     400000: Room and Content.000
     400002: Room and Content.002
     400004: //RootNode
+    400006: Room and Content.001
     2100000: Material.007
     2100002: White Shelf
+    2100004: Emission Dim
+    2100006: Emission Bright
     2300000: Room and Content.000
     2300002: Room and Content.002
+    2300004: Room and Content.001
     3300000: Room and Content.000
     3300002: Room and Content.002
+    3300004: Room and Content.001
     4300000: Room and Content.000
     4300002: Room and Content.002
+    4300004: Room and Content.001
   externalObjects: {}
   materials:
     importMaterials: 1
