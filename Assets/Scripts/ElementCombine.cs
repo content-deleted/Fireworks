@@ -18,7 +18,7 @@ public class ElementCombine : MonoBehaviour
     public static void addElement(elements e){
         combined.Add(e);
         bool valid = false;
-        foreach(chemical c in GameStateManager.singleton.chemicals){
+        foreach((chemical c, int j) in GameStateManager.singleton.chemicals.Select((x, y)=> (x,y))){
             // store a mutable copy of our list
             List<elements> chemComp = c.elements.ToList();
 
@@ -34,7 +34,7 @@ public class ElementCombine : MonoBehaviour
             }
             if(valid){
                 // while something may be valid, it may not have all the requirements to create a full chemical
-                if(!chemComp.Any()) craftChemical(c);
+                if(!chemComp.Any()) craftChemical(c,j);
                 break;
             }
         }
@@ -50,10 +50,13 @@ public class ElementCombine : MonoBehaviour
         t.GetChild(0).GetComponent<Text>().text = combined.Any() ? toString() : "";
     }
     
-    public static void craftChemical(chemical chem){
+    public static void craftChemical(chemical chem, int i){
         chem.crafted = true;
         showFeedback(chem.chemSprite);
         AudioManager.singleton.audioSource.PlayOneShot(AudioManager.singleton.correct, 0.7F);
+
+        //update tv
+        FireworksTVControl.updateTV(i);
 
         // clear combined
         combined = new List<elements>();
@@ -67,6 +70,10 @@ public class ElementCombine : MonoBehaviour
             var purple = ElementCombine.showFeedback(GameStateManager.singleton.purpleSprite, 8);
             purple.GetComponent<Billboard>().enabled = false;
             purple.transform.LookAt(purple.transform.position + Vector3.forward);
+
+            //update tv
+            FireworksTVControl.updateTV(5);
+            
             // explanation
             PlayerTextUI.singleton.helpMessages.Add("Purple is created with a combination of red and blue light!");
             PlayerTextUI.singleton.helpMessages.Add("By mixing your strontium and copper componds you can have purple as well.");
