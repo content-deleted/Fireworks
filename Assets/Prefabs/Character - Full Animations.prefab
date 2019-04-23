@@ -914,15 +914,16 @@ MonoBehaviour:
   minimumY: -30
   lookSpeed: 15
   angleToSnap: 2
+  animator: {fileID: 0}
   jumpClip: {fileID: 0}
   grounded: 1
   hangTime: 1
-  fallSpeedCap: 30
-  fallCoefficent: 0.3
-  jumpStrength: 16
-  jumpControl: 0.33
+  fallSpeedCap: 100
+  fallCoefficent: 0.15
+  jumpStrength: 17
+  jumpControl: 0.85
   slopeSize: 0.05
-  moveSpeedCap: 7
+  moveSpeedCap: 6
   runSpeed: 10
   frictionCoefficient: 1.1
 --- !u!114 &4946381262565364824

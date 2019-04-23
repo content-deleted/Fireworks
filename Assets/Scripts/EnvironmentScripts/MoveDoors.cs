@@ -28,13 +28,13 @@ public class MoveDoors : MonoBehaviour
     IEnumerator moveShelves (bool right) {
         if(right){
             while(bookRight.transform.position.z < rightStart+max) {
+                if(this.transform.localPosition.z > 0.2671) this.transform.localPosition -= new Vector3(0,0,0.0001f);
                 bookRight.transform.position += new Vector3(0,0,dt);
                 yield return new WaitForSeconds(0.000001f);
             }
         }
         else {
             while(bookLeft.transform.position.z > leftStart-max) {
-                Debug.Log("coleft");
                 bookLeft.transform.position -= new Vector3(0,0,dt);
                 yield return new WaitForSeconds(0.000001f);
             }

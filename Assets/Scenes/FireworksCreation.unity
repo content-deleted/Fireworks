@@ -122,7 +122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 37490301}
   - component: {fileID: 37490300}
-  - component: {fileID: 37490299}
   m_Layer: 2
   m_Name: BurnerAdjuster
   m_TagString: Adjuster
@@ -130,18 +129,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &37490299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37490298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7cb5e8baeed7a4caccf43e4a04078f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &37490300
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -153,8 +140,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.9538083, y: 2.9422922, z: 5.9169664}
-  m_Center: {x: -3.0510404, y: 3.908862, z: 3.4107885}
+  m_Size: {x: 2.818356, y: 2.9963422, z: 6.723738}
+  m_Center: {x: -0.07717872, y: 1.9030292, z: -0.38378263}
 --- !u!4 &37490301
 Transform:
   m_ObjectHideFlags: 0
@@ -163,10 +150,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37490298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.51, y: 0, z: -3.9}
+  m_LocalPosition: {x: 1.64, y: 2.62, z: 0.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1488129517}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2243,6 +2229,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300028, guid: 7c5fd38f23afa3c4e8838d992ae91389,
         type: 3}
+    - target: {fileID: 7344017983018165560, guid: 21e51b02a89eb084db6bef713861dadb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344017983018165560, guid: 21e51b02a89eb084db6bef713861dadb,
+        type: 3}
+      propertyPath: debug
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21e51b02a89eb084db6bef713861dadb, type: 3}
 --- !u!1 &607028792 stripped
@@ -4695,36 +4691,6 @@ Transform:
   m_Father: {fileID: 1888231609}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!1 &1488129516
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1488129517}
-  m_Layer: 2
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1488129517
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488129516}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.83, y: 4.38, z: 3.84}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 37490301}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1553822570 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6922212274399660602, guid: 130c290fc813294438436ee7724b59d6,
@@ -7379,7 +7345,6 @@ GameObject:
   - component: {fileID: 1966665651174755768}
   - component: {fileID: 1966665651172496249}
   - component: {fileID: 1966665651172496251}
-  - component: {fileID: 1966665651172496250}
   m_Layer: 0
   m_Name: Bookshelf Button
   m_TagString: Untagged
@@ -7404,18 +7369,6 @@ MonoBehaviour:
   max: 3.5
   dt: 0.005
   open: 0
---- !u!114 &1966665651172496250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1966665651172496248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d71719dcbf15bef4e8a87357d7ea5491, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1966665651172496251
 BoxCollider:
   m_ObjectHideFlags: 0
