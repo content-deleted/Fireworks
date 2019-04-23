@@ -3283,12 +3283,12 @@ PrefabInstance:
     - target: {fileID: 3232022218615311805, guid: 4a6d9c6b34804964a8cd312f7c67fdb7,
         type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3232022217230405585, guid: 4a6d9c6b34804964a8cd312f7c67fdb7,
         type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3232022217230405591, guid: 4a6d9c6b34804964a8cd312f7c67fdb7,
         type: 3}
@@ -3298,12 +3298,12 @@ PrefabInstance:
     - target: {fileID: 3232022217805220025, guid: 4a6d9c6b34804964a8cd312f7c67fdb7,
         type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3232022218155921720, guid: 4a6d9c6b34804964a8cd312f7c67fdb7,
         type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3232022218155921721, guid: 4a6d9c6b34804964a8cd312f7c67fdb7,
         type: 3}
@@ -4927,7 +4927,7 @@ GameObject:
   - component: {fileID: 1224624665}
   - component: {fileID: 1224624667}
   - component: {fileID: 1224624666}
-  m_Layer: 12
+  m_Layer: 2
   m_Name: PlantNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5394,7 +5394,7 @@ GameObject:
   - component: {fileID: 1349778126}
   - component: {fileID: 1349778128}
   - component: {fileID: 1349778127}
-  m_Layer: 12
+  m_Layer: 2
   m_Name: CenterNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6578,7 +6578,7 @@ GameObject:
   - component: {fileID: 1792802960}
   - component: {fileID: 1792802959}
   - component: {fileID: 1792802958}
-  m_Layer: 12
+  m_Layer: 2
   m_Name: CubbyNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6727,7 +6727,7 @@ GameObject:
   - component: {fileID: 1854867059}
   - component: {fileID: 1854867061}
   - component: {fileID: 1854867060}
-  m_Layer: 12
+  m_Layer: 2
   m_Name: BoxNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6790,7 +6790,7 @@ GameObject:
   - component: {fileID: 1914629876}
   - component: {fileID: 1914629878}
   - component: {fileID: 1914629877}
-  m_Layer: 12
+  m_Layer: 2
   m_Name: TopCabNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7265,7 +7265,7 @@ GameObject:
   - component: {fileID: 2095388321}
   - component: {fileID: 2095388323}
   - component: {fileID: 2095388322}
-  m_Layer: 12
+  m_Layer: 2
   m_Name: CouchNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7432,7 +7432,7 @@ GameObject:
   - component: {fileID: 2132557598}
   - component: {fileID: 2132557600}
   - component: {fileID: 2132557599}
-  m_Layer: 12
+  m_Layer: 2
   m_Name: BottomCabNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
