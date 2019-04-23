@@ -48,9 +48,9 @@ public class GameStateManager : MonoBehaviour
         var Sprites = Resources.LoadAll<Sprite>($"UI_Sprite_");
 
         // debug for having all elements collected
-        if(debug) for(int i = 0; i <11; i++) collected[i] = true;
+        if(debug) setDebug();
     }
-
+    public void setDebug() { for(int i = 0; i <11; i++) collected[i] = true; }
     void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
     void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
 
@@ -84,6 +84,7 @@ public class GameStateManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
         var uncraftedChem = GameStateManager.singleton.chemicals.Where(x => !x.crafted);
         if(!uncraftedChem.Any()) {
+            Debug.Log("no uncrafted");
             canMoveOn = true;
             PlayerState.singleton.transform.Find("Arrow").gameObject.SetActive(true);
 
@@ -91,8 +92,9 @@ public class GameStateManager : MonoBehaviour
             PlayerTextUI.singleton.helpMessages.Add("Click on me when you're ready and I'll prepare them for launch.");
             PlayerTextUI.singleton.startPush();
         } else {
-            var chemicalsLeft = uncraftedChem.Where(c => !c.elements.Where(hasCollected).Any()).Any();
+            var chemicalsLeft = uncraftedChem.Where(c => !c.elements.Where(e => !hasCollected(e)).Any()).Any();
             if(!chemicalsLeft) {
+                Debug.Log("no avalible");
                 canMoveOn = true;
                 PlayerState.singleton.transform.Find("Arrow").gameObject.SetActive(true);
                 

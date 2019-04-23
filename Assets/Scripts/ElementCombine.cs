@@ -64,7 +64,9 @@ public class ElementCombine : MonoBehaviour
         && GameStateManager.singleton.chemicals[3].crafted)  {
             // craft purple 
             GameStateManager.singleton.purpleCrafted = true;
-            ElementCombine.showFeedback(GameStateManager.singleton.purpleSprite);
+            var purple = ElementCombine.showFeedback(GameStateManager.singleton.purpleSprite, 8);
+            purple.GetComponent<Billboard>().enabled = false;
+            purple.transform.LookAt(Vector3.forward);
             // explanation
             PlayerTextUI.singleton.helpMessages.Add("Purple is created with a combination of red and blue light!");
             PlayerTextUI.singleton.helpMessages.Add("By mixing your strontium and copper componds you can have purple as well.");
@@ -100,10 +102,11 @@ public class ElementCombine : MonoBehaviour
     /// Creates a new instance of the UI display 
     /// </summary>
     /// <param name="Sprite to set"></param>
-    public static void showFeedback(Sprite sprite, float height = 4){
+    public static GameObject showFeedback(Sprite sprite, float height = 4){
         var objClone = Instantiate(Resources.Load("UI_Display") as GameObject, t.position + Vector3.up * height, Quaternion.identity);
         objClone.GetComponent<SpriteRenderer>().sprite = sprite;
         Destroy(objClone, displayTime);
+        return objClone;
     }
     
     private static Transform t;
