@@ -21,10 +21,14 @@ public class GameCountDown : MonoBehaviour
             GameStateManager.singleton.gameStarted = true;
             if(t<=0) {
                 // ran out of time
+                PlayerTextUI.singleton.helpMessages.Add("We're almost out of time! We better start on those fireworks.");
+                PlayerTextUI.singleton.startPush();
                 EndGame();
             }
             else if(GameStateManager.singleton.allElementsCollected()){
                 // all elements collected 
+                PlayerTextUI.singleton.helpMessages.Add("Thats all the elements we need! Lets go get started on those fireworks.");
+                PlayerTextUI.singleton.startPush();
                 EndGame();
             }
         }

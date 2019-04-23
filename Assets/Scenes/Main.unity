@@ -6148,7 +6148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3beb0e6a8ff6adc46bf139aa6fb2cb21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Room2
+  sceneName: SecondRoom
   screenfade: {fileID: 7052903362527679010}
 --- !u!65 &1607196043
 BoxCollider:
@@ -6997,7 +6997,7 @@ MonoBehaviour:
   vrRig: {fileID: 1636557976602326509}
   screenfade: {fileID: 7052903362527679010}
   fireworksWorkStationScene: FireworksCreation
-  minutesStart: 4
+  minutesStart: 8
   end: 0
 --- !u!114 &1946864579
 MonoBehaviour:
@@ -8482,10 +8482,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messages:
   - subMessages:
-    - I think you can find the thing over there
-    - try that
+    - Maybe if I could try looking in the back room...
   - subMessages:
-    - Thing
+    - I think there's something on top of the cabinets.
   timeTillNextMessage: 100
 --- !u!82 &1636557976602326513
 AudioSource:
@@ -8607,7 +8606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88742731e7e5cb408bd7873792dd508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  altPosition: {x: -20, y: -1.33, z: 28}
+  altPosition: {x: -20, y: 4.55949, z: 28}
 --- !u!1 &1636557976662732926
 GameObject:
   m_ObjectHideFlags: 0

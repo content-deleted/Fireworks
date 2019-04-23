@@ -203,7 +203,7 @@ PrefabInstance:
     - target: {fileID: 4537136256414446313, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
         type: 3}
       propertyPath: m_Name
-      value: EyeCatch (1)
+      value: EyeCatch
       objectReference: {fileID: 0}
     - target: {fileID: 4537136256414446294, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
         type: 3}
@@ -1091,7 +1091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: ffe82f31b7f615c4e9468b9d94d4a67e, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: ffe82f31b7f615c4e9468b9d94d4a67e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1836,132 +1836,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 410599330}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1087582939
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1087582940}
-  - component: {fileID: 1087582942}
-  - component: {fileID: 1087582941}
-  m_Layer: 12
-  m_Name: CabnetBottomRightNode
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1087582940
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087582939}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 15.7, z: -18.500002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3232022217924053601}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1087582941
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087582939}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 28.52661, y: 10.0137205, z: 21.553574}
-  m_Center: {x: 2.1387725, y: -9.66, z: -13.659743}
---- !u!114 &1087582942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087582939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fec9a597c2f08e44a976de6abdd8a29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1108564279
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1108564282}
-  - component: {fileID: 1108564281}
-  - component: {fileID: 1108564280}
-  m_Layer: 2
-  m_Name: potaHint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1108564280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1108564279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf01ec25e58f3e4ab626f9818daa7a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  helpMessages:
-  - Potassium nitrate makes up 75% of gunpowder and acts as an oxidizing agent for
-    the reaction.
-  - Without it we wouldnt have fireworks!
-  triggerOnce: 1
---- !u!65 &1108564281
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1108564279}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.3932066, y: 8.142975, z: 3.9957957}
-  m_Center: {x: 1.6854863, y: 3.571488, z: -3.9899132}
---- !u!4 &1108564282
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1108564279}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.09, y: 4.17, z: 8.36}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1393070178 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1393070178, guid: 6a4d59bf0a53d0e46a633f4eee1345c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 74219962}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1397824709
+--- !u!1001 &1030658072
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1987,26 +1862,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4537136256414446294, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.008915095
-      objectReference: {fileID: 0}
-    - target: {fileID: 4537136256414446294, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.004611859
-      objectReference: {fileID: 0}
-    - target: {fileID: 4537136256414446294, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.025714746
-      objectReference: {fileID: 0}
-    - target: {fileID: 4537136256414446294, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.99961895
       objectReference: {fileID: 0}
     - target: {fileID: 4537136256414446294, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
         type: 3}
@@ -2036,12 +1891,12 @@ PrefabInstance:
     - target: {fileID: 4537136256414446294, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.89226204
+      value: 0.89226407
       objectReference: {fileID: 0}
     - target: {fileID: 4537136256414446294, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2656032
+      value: 1.2656057
       objectReference: {fileID: 0}
     - target: {fileID: 4537136256414446292, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
         type: 3}
@@ -2277,19 +2132,139 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0a6b67aa8d3a5eb4a86fd403a7de50c9, type: 2}
-    - target: {fileID: 4537136256414446295, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a6b67aa8d3a5eb4a86fd403a7de50c9, type: 2}
+      objectReference: {fileID: 2100000, guid: 58dfc75d67971fb408a0a4535b0b60ee, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c1ca0578c6c6c147942d7c6c00558cf, type: 3}
---- !u!4 &1397824710 stripped
+--- !u!4 &1030658073 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4537136256414446294, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
     type: 3}
-  m_PrefabInstance: {fileID: 1397824709}
+  m_PrefabInstance: {fileID: 1030658072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1087582939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1087582940}
+  - component: {fileID: 1087582942}
+  - component: {fileID: 1087582941}
+  m_Layer: 12
+  m_Name: CabnetBottomRightNode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1087582940
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087582939}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.6, y: 15.7, z: -18.500002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3232022217924053601}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1087582941
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087582939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 28.52661, y: 10.0137205, z: 21.553574}
+  m_Center: {x: 2.1387725, y: -9.66, z: -13.659743}
+--- !u!114 &1087582942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087582939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fec9a597c2f08e44a976de6abdd8a29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1108564279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1108564282}
+  - component: {fileID: 1108564281}
+  - component: {fileID: 1108564280}
+  m_Layer: 2
+  m_Name: potaHint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1108564280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108564279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf01ec25e58f3e4ab626f9818daa7a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helpMessages:
+  - Potassium nitrate makes up 75% of gunpowder and acts as an oxidizing agent for
+    the reaction.
+  - Without it we wouldnt have fireworks!
+  triggerOnce: 1
+--- !u!65 &1108564281
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108564279}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.3932066, y: 8.142975, z: 3.9957957}
+  m_Center: {x: 1.6854863, y: 3.571488, z: -3.9899132}
+--- !u!4 &1108564282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108564279}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -12.09, y: 4.17, z: 8.36}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1393070178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1393070178, guid: 6a4d59bf0a53d0e46a633f4eee1345c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 74219962}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1461703438
 PrefabInstance:
@@ -2850,7 +2825,7 @@ Transform:
   m_LocalPosition: {x: -30.92, y: 7.5, z: -10.56}
   m_LocalScale: {x: 35.65806, y: 35.658092, z: 35.658066}
   m_Children:
-  - {fileID: 1397824710}
+  - {fileID: 1030658073}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: -125.006, y: 0, z: 0}
@@ -3484,7 +3459,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0a6b67aa8d3a5eb4a86fd403a7de50c9, type: 2}
+  - {fileID: 2100000, guid: dee1127731754d84397e33b9abc3b11f, type: 2}
   - {fileID: 2100000, guid: b45cbc839e39749429841ccb3d60170a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -3746,7 +3721,7 @@ MonoBehaviour:
   vrRig: {fileID: 1636557976602326509}
   screenfade: {fileID: 7052903362527679010}
   fireworksWorkStationScene: FireworksCreation
-  minutesStart: 4
+  minutesStart: 8
   end: 0
 --- !u!114 &1946864579
 MonoBehaviour:
@@ -3790,25 +3765,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946864576}
   m_CullTransparentMesh: 0
---- !u!1 &1954910312 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4946381262565364830, guid: 130c290fc813294438436ee7724b59d6,
-    type: 3}
-  m_PrefabInstance: {fileID: 568594109}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1954910314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954910312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e88742731e7e5cb408bd7873792dd508, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  altPosition: {x: -22, y: -6, z: 20}
 --- !u!1 &1961057004
 GameObject:
   m_ObjectHideFlags: 0
@@ -4896,9 +4852,7 @@ GameObject:
   - component: {fileID: 1636557976602326502}
   - component: {fileID: 1636557976602326510}
   - component: {fileID: 1636557976602326511}
-  - component: {fileID: 1636557976602326512}
   - component: {fileID: 1636557976602326513}
-  - component: {fileID: 1636557976602326515}
   m_Layer: 10
   m_Name: OurOVRrig
   m_TagString: Untagged
@@ -4936,25 +4890,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xMultiplier: 100
   yMultiplier: 100
---- !u!114 &1636557976602326512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636557976602326509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd9ce6ce3c0b954439e81476d66a993d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  messages:
-  - subMessages:
-    - I think you can find the thing over there
-    - try that
-  - subMessages:
-    - Thing
-  timeTillNextMessage: 100
 --- !u!82 &1636557976602326513
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5063,19 +4998,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3443122a8eaed81428cb9a664b61061b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1636557976602326515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636557976602326509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e88742731e7e5cb408bd7873792dd508, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  altPosition: {x: -20, y: -1.33, z: 28}
 --- !u!1 &1636557976662732926
 GameObject:
   m_ObjectHideFlags: 0
