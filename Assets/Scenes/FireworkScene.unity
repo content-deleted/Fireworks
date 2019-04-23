@@ -518,8 +518,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 227307721}
-  - component: {fileID: 227307723}
   - component: {fileID: 227307722}
+  - component: {fileID: 227307723}
   m_Layer: 2
   m_Name: LeftBackNode
   m_TagString: Untagged
@@ -563,7 +563,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 227307720}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3443122a8eaed81428cb9a664b61061b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fec9a597c2f08e44a976de6abdd8a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &279144427
@@ -575,8 +575,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 279144428}
-  - component: {fileID: 279144430}
   - component: {fileID: 279144429}
+  - component: {fileID: 279144430}
   m_Layer: 2
   m_Name: RightFrontNode
   m_TagString: Untagged
@@ -620,7 +620,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 279144427}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3443122a8eaed81428cb9a664b61061b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fec9a597c2f08e44a976de6abdd8a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &321758549
@@ -755,8 +755,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 547192732}
-  - component: {fileID: 547192734}
   - component: {fileID: 547192733}
+  - component: {fileID: 547192734}
   m_Layer: 2
   m_Name: RoofNodeBack
   m_TagString: Untagged
@@ -800,7 +800,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 547192731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3443122a8eaed81428cb9a664b61061b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fec9a597c2f08e44a976de6abdd8a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &568594109
@@ -1013,8 +1013,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 599891225}
-  - component: {fileID: 599891227}
   - component: {fileID: 599891226}
+  - component: {fileID: 599891227}
   m_Layer: 2
   m_Name: ButtonNote
   m_TagString: Untagged
@@ -1058,7 +1058,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 599891224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3443122a8eaed81428cb9a664b61061b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fec9a597c2f08e44a976de6abdd8a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &625515987
@@ -1139,8 +1139,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 628724296}
-  - component: {fileID: 628724298}
   - component: {fileID: 628724297}
+  - component: {fileID: 628724298}
   m_Layer: 2
   m_Name: LeftMidNode
   m_TagString: Untagged
@@ -1184,7 +1184,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 628724295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3443122a8eaed81428cb9a664b61061b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fec9a597c2f08e44a976de6abdd8a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &646189971
@@ -1196,8 +1196,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 646189972}
-  - component: {fileID: 646189974}
   - component: {fileID: 646189973}
+  - component: {fileID: 646189974}
   m_Layer: 2
   m_Name: RoofNodeFront
   m_TagString: Untagged
@@ -1241,7 +1241,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 646189971}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3443122a8eaed81428cb9a664b61061b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fec9a597c2f08e44a976de6abdd8a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &665753250
@@ -1640,11 +1640,6 @@ PrefabInstance:
         type: 3}
       propertyPath: chemicals.Array.data[2].crafted
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7344017983018165560, guid: 21e51b02a89eb084db6bef713861dadb,
-        type: 3}
-      propertyPath: gameStarted
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21e51b02a89eb084db6bef713861dadb, type: 3}
@@ -2117,8 +2112,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1452218158}
-  - component: {fileID: 1452218160}
   - component: {fileID: 1452218159}
+  - component: {fileID: 1452218160}
   m_Layer: 2
   m_Name: LeftFrontNode
   m_TagString: Untagged
@@ -2162,7 +2157,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1452218157}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3443122a8eaed81428cb9a664b61061b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fec9a597c2f08e44a976de6abdd8a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1492491897
@@ -2451,8 +2446,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1647966713}
-  - component: {fileID: 1647966715}
   - component: {fileID: 1647966714}
+  - component: {fileID: 1647966715}
   m_Layer: 2
   m_Name: RightBackNode
   m_TagString: Untagged
@@ -2496,7 +2491,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1647966712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3443122a8eaed81428cb9a664b61061b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fec9a597c2f08e44a976de6abdd8a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1729328105
@@ -3021,8 +3016,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1756099560}
-  - component: {fileID: 1756099562}
   - component: {fileID: 1756099561}
+  - component: {fileID: 1756099562}
   m_Layer: 2
   m_Name: RightMidNode
   m_TagString: Untagged
@@ -3066,7 +3061,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1756099559}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3443122a8eaed81428cb9a664b61061b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fec9a597c2f08e44a976de6abdd8a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1771279563
@@ -5696,8 +5691,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3.6042259
-  m_Center: {x: -0.000000009321926, y: -0.098596096, z: 3.0572643}
+  m_Radius: 2.8056092
+  m_Center: {x: 0.000000004015696, y: -0.098596096, z: 2.4325175}
 --- !u!114 &7824648929362151663
 MonoBehaviour:
   m_ObjectHideFlags: 0

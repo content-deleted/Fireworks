@@ -53,7 +53,7 @@ public class UIDisplay : MonoBehaviour
 
     void Update()
     {
-        if( (OVRInput.GetDown(OVRInput.Button.Any) || Input.GetKeyDown(KeyCode.Space)) && !Locked) Advance();
+        if( (OVRInput.GetDown(OVRInput.Button.Back) || OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyDown(KeyCode.Space)) && !Locked) Advance();
     }
     void Advance() {
         if(currentElement > elements.Count) return;

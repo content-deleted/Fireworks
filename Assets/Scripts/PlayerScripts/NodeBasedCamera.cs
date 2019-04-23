@@ -11,6 +11,7 @@ public class NodeBasedCamera : MonoBehaviour
     }
 
     public void LateUpdate() {
+        Debug.Log(currentNode);
         if(currentNode != null) {
             if(Vector3.Distance(currentNode.position, transform.position) > 0.05f)
                 rb.velocity =  (currentNode.position - transform.position).normalized + (currentNode.position - transform.position) / 10;
