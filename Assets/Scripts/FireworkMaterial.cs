@@ -45,7 +45,7 @@ public class FireworkMaterial : MonoBehaviour
 
     public void adjust(Collider other) {
         Vector3 offset = 0.1f * PointerController.singleton.transform.forward;
-        if(transform.position.z < other.transform.position.z) PointerController.singleton.grabPoint.transform.position += offset;
+        if(transform.position.z > other.transform.position.z) PointerController.singleton.grabPoint.transform.position += offset;
         else PointerController.singleton.grabPoint.transform.localPosition -= offset;
     }
 

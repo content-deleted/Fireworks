@@ -52,7 +52,7 @@ public class PointerController : MonoBehaviour
 
         singleton = this;
     }
-    const int ignoreMask = ~(1 << 12);
+    const int ignoreMask = ~(1 << 12 | 1 << 2);
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.P)) MoveToFinalScene();
