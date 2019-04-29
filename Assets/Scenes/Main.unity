@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 38127561}
   - component: {fileID: 38127560}
   - component: {fileID: 38127567}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: Element_BA_Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,6 +437,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EyeCatch
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537136256414446313, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4537136256414446294, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
         type: 3}
@@ -1156,7 +1161,7 @@ GameObject:
   - component: {fileID: 355923785}
   - component: {fileID: 355923784}
   - component: {fileID: 355923791}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: Element_CU_Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1595,6 +1600,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EyeCatch
       objectReference: {fileID: 0}
+    - target: {fileID: 4537136256414446313, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4537136256414446294, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1997,7 +2007,7 @@ GameObject:
   - component: {fileID: 473319938}
   - component: {fileID: 473319932}
   - component: {fileID: 473319939}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: Element_SR_Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2241,7 +2251,7 @@ GameObject:
   - component: {fileID: 483610203}
   - component: {fileID: 483610202}
   - component: {fileID: 483610201}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: Element_O_Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3350,6 +3360,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EyeCatch
       objectReference: {fileID: 0}
+    - target: {fileID: 4537136256414446313, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4537136256414446294, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3751,7 +3766,7 @@ GameObject:
   - component: {fileID: 854055938}
   - component: {fileID: 854055937}
   - component: {fileID: 854055944}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: Element_Cl_Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4065,6 +4080,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EyeCatch (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537136256414446313, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4537136256414446294, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
         type: 3}
@@ -4600,6 +4620,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EyeCatch (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4537136256414446313, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4537136256414446294, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5061,6 +5086,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EyeCatch
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537136256414446313, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4537136256414446294, guid: 5c1ca0578c6c6c147942d7c6c00558cf,
         type: 3}
@@ -6282,7 +6312,7 @@ GameObject:
   - component: {fileID: 1676358038}
   - component: {fileID: 1676358037}
   - component: {fileID: 1676358044}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: Element_C_Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
