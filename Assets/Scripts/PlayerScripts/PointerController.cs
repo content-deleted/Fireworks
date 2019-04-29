@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class PointerController : MonoBehaviour
 {
@@ -85,7 +86,12 @@ public class PointerController : MonoBehaviour
                         prevRotation = handModel.transform.rotation.eulerAngles.z;
                     }
                     if(creationMode && r.gameObject.tag == "Player") {
-                        MoveToFinalScene();
+                        if(GameStateManager.singleton.chemicals.Where(c => c.crafted).Any())
+                            MoveToFinalScene();
+                        else {
+                            PlayerTextUI.singleton.helpMessages.Add("Woah there, lets try making at least one firework color before we leave!");
+                            PlayerTextUI.singleton.startPush();
+                        }
                     }
                 }
                 // update the point light
