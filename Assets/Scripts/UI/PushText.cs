@@ -18,7 +18,7 @@ public class PushText : MonoBehaviour
     public float textSpeed;
     public List<string> messages = new List<string>();
     void Update () {
-        if(OVRInput.GetDown(OVRInput.Button.Any) || Input.GetKeyDown(KeyCode.Space) ) skip = true;
+        if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyDown(KeyCode.Space) ) skip = true;
     }
     void OnEnable() {
         if(running) StartCoroutine(push());
@@ -38,7 +38,7 @@ public class PushText : MonoBehaviour
                     break;
                 }
                 textObject.text = textObject.text+c;
-                yield return new WaitForSeconds(textSpeed);
+                 if(Time.timeScale > 0) yield return new WaitForSeconds(textSpeed);
             }
             if(!text.Equals(messages.Last())){
                 for(int i = 0; i < waitBetweenMessages; i++){
@@ -55,4 +55,5 @@ public class PushText : MonoBehaviour
         UIDisplay.singleton.Locked = false;
         running = false;
     }
+
 }

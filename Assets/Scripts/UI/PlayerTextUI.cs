@@ -22,7 +22,13 @@ public class PlayerTextUI : MonoBehaviour
         foreach(Image i in images) i.color = tempColor;
         transform.parent.gameObject.SetActive(false);
     }
-
+    public bool running=false;
+    void OnEnable() {
+        if(running) {
+            textRender.text = "";
+            StartCoroutine(push());
+        }
+    }
     public void startPush()
     {
         if (!gameObject.activeInHierarchy)
@@ -34,6 +40,7 @@ public class PlayerTextUI : MonoBehaviour
     public int waitBetweenMessages = 200;
     IEnumerator push()
     {
+        running = true;
         while (images[0].color.a < 1)
         {
 
@@ -42,11 +49,10 @@ public class PlayerTextUI : MonoBehaviour
             foreach(Image i in images) i.color = temp;
             yield return new WaitForEndOfFrame();
         }
+        
         while (helpMessages.Any())
             foreach (string text in helpMessages.ToList())
             {
-                helpMessages.Remove(text);
-
                 foreach (char c in text.ToCharArray())
                 {
                     textRender.text = textRender.text + c;
@@ -54,6 +60,7 @@ public class PlayerTextUI : MonoBehaviour
                 }
 
                 yield return new WaitForSeconds(textSpeed * 50);
+                helpMessages.Remove(text);
                 textRender.text = "";
             }
 
@@ -65,6 +72,7 @@ public class PlayerTextUI : MonoBehaviour
             foreach(Image i in images) i.color = temp;
             yield return new WaitForEndOfFrame();
         }
+        running = false;
 
         transform.parent.gameObject.SetActive(false);
     }

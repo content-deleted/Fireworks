@@ -24,6 +24,7 @@ namespace Fireworks {
         {
             waitFor = secondsToWait;
             startTime = Time.time;
+            Debug.Log("why the fuck doesnt it work");
         }
     }
 }
