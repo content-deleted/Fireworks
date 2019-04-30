@@ -88,7 +88,7 @@ public class PointerController : MonoBehaviour
                     if(creationMode && r.gameObject.tag == "Player") {
                         if(GameStateManager.singleton.chemicals.Where(c => c.crafted).Any())
                             MoveToFinalScene();
-                        else {
+                        else if(PlayerTextUI.singleton.gameObject.activeInHierarchy){
                             PlayerTextUI.singleton.helpMessages.Add("Woah there, lets try making at least one firework color before we leave!");
                             PlayerTextUI.singleton.startPush();
                         }
