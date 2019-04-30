@@ -36,6 +36,7 @@ public class GameStateManager : MonoBehaviour
     public bool gameStarted = false;
     bool [] collected = new bool[11];
     public Sprite [] UI_Sprites;
+    public static float counter = 0; // counter for use by gametimer
     void Awake()
     {
         if(singleton == null) singleton = this;
@@ -86,7 +87,6 @@ public class GameStateManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
         var uncraftedChem = GameStateManager.singleton.chemicals.Where(x => !x.crafted);
         if(!uncraftedChem.Any()) {
-            Debug.Log("no uncrafted");
             canMoveOn = true;
             PlayerState.singleton.transform.Find("Arrow").gameObject.SetActive(true);
 
@@ -96,7 +96,6 @@ public class GameStateManager : MonoBehaviour
         } else {
             var chemicalsLeft = uncraftedChem.Where(c => !c.elements.Where(e => !hasCollected(e)).Any()).Any();
             if(!chemicalsLeft) {
-                Debug.Log("no avalible");
                 canMoveOn = true;
                 PlayerState.singleton.transform.Find("Arrow").gameObject.SetActive(true);
                 

@@ -12,11 +12,10 @@ public class GameCountDown : MonoBehaviour
     private Text text;
     public void Start () => text = GetComponent<Text>();
     public bool end=false;
-    public static float counter = 0;
     public void Update () {
         if(!end) {
-            counter += Time.deltaTime;
-            var t = ((minutesStart * 60) - counter);
+            GameStateManager.counter += Time.deltaTime;
+            var t = ((minutesStart * 60) - GameStateManager.counter);
             text.text =  $"{(int)(t/60)}:{((int)(t%60)).ToString("D2")}";
             GameStateManager.singleton.gameStarted = true;
             if(t<=0) {

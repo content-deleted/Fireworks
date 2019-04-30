@@ -92,8 +92,8 @@ public class PauseManager : MonoBehaviour
     
     public void ResetGame () {
         Paused = false;
-        GameStateManager.singleton.gameStarted = false;
         screenfade.FadeOut(() => SceneManager.LoadScene("Main", LoadSceneMode.Single));
-        GameStateManager.singleton = new GameStateManager();
+        GameObject.Destroy(GameStateManager.singleton);
+        GameStateManager.counter = 0;
     }
 }
