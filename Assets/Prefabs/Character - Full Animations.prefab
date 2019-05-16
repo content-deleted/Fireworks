@@ -919,11 +919,11 @@ MonoBehaviour:
   grounded: 1
   hangTime: 1
   fallSpeedCap: 100
-  fallCoefficent: 0.15
+  fallCoefficent: 0.3
   jumpStrength: 17
-  jumpControl: 0.85
+  jumpControl: 0.9
   slopeSize: 0.05
-  moveSpeedCap: 6
+  moveSpeedCap: 5
   runSpeed: 10
   frictionCoefficient: 1.1
 --- !u!114 &4946381262565364824

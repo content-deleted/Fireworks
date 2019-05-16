@@ -7,21 +7,12 @@ public class LevelEntry : MonoBehaviour
 {
     public string sceneName;
     public OVRScreenFade screenfade;
-    private float timer;
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player"){
-            timer++;
-            Debug.Log(timer);
-            if(timer>40)
                 screenfade.FadeOut(() => 
                     SceneManager.LoadScene(sceneName,LoadSceneMode.Single)
                 );
         }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if(other.tag == "Player") timer = 0;
     }
 }

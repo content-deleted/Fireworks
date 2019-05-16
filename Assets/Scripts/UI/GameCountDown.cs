@@ -36,10 +36,9 @@ public class GameCountDown : MonoBehaviour
     public void EndGame() {
         end=true;
 
-        screenfade.FadeOut(() => 
-            SceneManager.LoadScene(fireworksWorkStationScene,LoadSceneMode.Single)
-        );
+        StartCoroutine(endDelay());
 
+        
         /*
         screenfade.StartTransition(() => {
     
@@ -49,5 +48,12 @@ public class GameCountDown : MonoBehaviour
             vrRig.GetComponent<CameraControl>().enabled=false;
             vrRig.GetComponent<Rigidbody>().velocity = Vector3.zero;
         });*/
+    }
+
+    public IEnumerator endDelay () {
+        yield return new WaitForSecondsRealtime(10);
+        screenfade.FadeOut(() => 
+            SceneManager.LoadScene(fireworksWorkStationScene,LoadSceneMode.Single)
+        );
     }
 }

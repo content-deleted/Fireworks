@@ -84,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Check if grounded and handle some other behavior that happens we we ground
         if(Vector3.Dot(collision.contacts[0].normal, Vector3.up ) > slopeSize ) {
+            rb.velocity = new Vector3(rb.velocity.x/2,0,rb.velocity.z/2);
             grounded = true;
             jumpHeld = false;
         }
@@ -114,8 +115,10 @@ public class PlayerMovement : MonoBehaviour
         xAxis += primaryTouchpad.x + Input.GetAxis("Horizontal");
         zAxis += primaryTouchpad.y + Input.GetAxis("Vertical");
 
-        xAxis = 2 * Mathf.Clamp(xAxis, -0.5f, 0.5f);
-        zAxis = 2 * Mathf.Clamp(zAxis, -0.5f, 0.5f);
+        if(Mathf.Abs(xAxis)>0.5f)
+            xAxis = 2 * Mathf.Clamp(xAxis, -0.5f, 0.5f);
+        if(Mathf.Abs(zAxis)>0.5f)
+            zAxis = 2 * Mathf.Clamp(zAxis, -0.5f, 0.5f);
 
         // If the player falls off of the map then set the player on the last ledge
         if (transform.position.y < minimumY)
@@ -125,7 +128,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
     # region Jump 
-        //if( OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyUp(KeyCode.Space)) {jumpHeld = false; Debug.Log("fuck");}
         if (grounded) {
             // Update the last on ledge position of the player
             ledgeMemory = transform.position; 
@@ -147,7 +149,10 @@ public class PlayerMovement : MonoBehaviour
             float ySpeed = rb.velocity.y - (!(OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger)||Input.GetKey(KeyCode.Space) ) ? fallCoefficent : 0.1f);
             if (ySpeed > -fallSpeedCap) 
             rb.velocity = new Vector3(rb.velocity.x, ySpeed, rb.velocity.z); 
-            if(ySpeed < 0) jumpHeld = false;
+
+            if ( (thisFrameJump && !lastFrameJump) || Input.GetKeyDown(KeyCode.Space) )
+                rb.AddForce(Vector3.up*50f,ForceMode.Impulse );
+            //if(ySpeed < 0) jumpHeld = false;
         }
     # endregion
 
@@ -155,7 +160,7 @@ public class PlayerMovement : MonoBehaviour
         var direction = new Vector2(xAxis, zAxis).normalized;
         var forward = cam.transform.forward; forward.y = 0;
         var right = cam.transform.right; right.y = 0;
-        force = forward.normalized * direction.y * runSpeed + right.normalized * direction.x * runSpeed;
+        force = Mathf.Abs(zAxis) * forward.normalized * direction.y * runSpeed + Mathf.Abs(xAxis) * right.normalized * direction.x * runSpeed;
         force.y = 0;
         
         // Apply ground friction
